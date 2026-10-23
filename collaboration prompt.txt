@@ -1,0 +1,884 @@
+# MASTER PROJECT PROMPT: COLLABNEXUS
+## Enterprise-Grade Influencer & Brand Collaboration Platform
+
+Act as a senior software architect, senior Java Full Stack developer, UI/UX designer, database architect, QA engineer, and DevOps engineer.
+
+Help me design and develop a complete, modern, secure, scalable web application named **CollabNexus — Where Brand Meets Influence**.
+
+This is a serious portfolio project that should also have a realistic path toward becoming a commercial SaaS business product.
+
+I am a beginner in software development. Explain technical decisions in simple language, write complete working code, and guide me step by step. Do not assume I already understand advanced programming.
+
+Do not try to build the entire application in one response. Build it in clearly defined phases, keep the project runnable after every phase, and verify that existing functionality is not broken before moving forward.
+
+---
+
+# 1. PRODUCT VISION
+
+CollabNexus is a two-sided influencer marketing marketplace that connects brands, marketing agencies, and content creators.
+
+Brands should be able to discover suitable creators, publish marketing campaigns, receive applications, select creators, agree on deliverables, monitor deadlines, track campaign performance, manage contract records, and maintain payment status.
+
+Creators should be able to create professional profiles, showcase their social media channels and portfolio, discover campaigns, submit applications and proposals, manage active collaborations, upload deliverables, track feedback, and monitor payment status.
+
+Administrators should manage user accounts, reported content, campaign disputes, platform settings, moderation, and platform-wide analytics.
+
+Build a polished application suitable for demonstrating professional Java Full Stack development skills.
+
+Brand identity:
+- Product name: CollabNexus
+- Tagline: Where Brand Meets Influence
+- Visual identity: premium corporate SaaS
+- Main colours: deep navy, subtle gold, white, and neutral grey
+- Use a minimal CN-inspired connection/bridge motif where appropriate.
+- Create a clean, responsive, accessible interface.
+- Avoid a generic, unfinished template appearance.
+
+# 2. REQUIRED TECHNOLOGY STACK
+
+Frontend:
+- HTML5
+- CSS3
+- Vanilla JavaScript using ES6+
+- Fetch API for backend communication
+- Responsive layouts
+- Reusable navigation, cards, forms, tables, modals, and dashboard components
+- Chart.js for analytics charts where appropriate
+
+Backend:
+- Java 21
+- Spring Boot 3.x, using a compatible stable release
+- Maven
+- Spring Web for REST APIs
+- Spring Data JPA
+- Spring Security
+- Jakarta Bean Validation
+- Spring Boot Actuator for basic application health monitoring
+- Spring Boot test dependencies
+
+Database:
+- H2 file-based database for initial local development
+- MySQL support through Spring profiles for a later phase
+- Hibernate/JPA entity relationships
+- Database migrations using Flyway when introduced
+- Never store passwords in plain text
+
+Other tools:
+- Git and GitHub
+- Postman or equivalent API testing tool
+- Docker and Docker Compose in a later phase
+- Environment variables for secrets and deployment configuration
+
+Do not introduce React, Angular, Node.js, or a separate frontend build system unless I explicitly approve the change. The initial frontend must remain HTML, CSS, and vanilla JavaScript.
+
+Use compatible dependencies. Before providing Maven configuration, ensure the Spring Boot version and Java version are compatible.
+
+# 3. USER ROLES AND PERMISSIONS
+
+Implement role-based access control for the following roles:
+
+A. ADMIN
+- View platform statistics.
+- Manage and suspend user accounts.
+- Review reported users, campaigns, and content.
+- View moderation and audit history.
+- Manage categories and platform settings.
+- Investigate reported disputes.
+- Access administrative functions only.
+
+B. BRAND
+- Register and create a company profile.
+- Manage company information and branding.
+- Create, edit, publish, pause, and close campaigns.
+- Search and filter creator profiles.
+- View creator portfolios and social channel information.
+- Review applications and proposals.
+- Shortlist, accept, or reject applicants.
+- Manage active collaborations.
+- Define deliverables, deadlines, and campaign budgets.
+- Review submitted deliverables and request revisions.
+- Maintain contract and payment records.
+- View campaign analytics and creator performance summaries.
+- Submit creator reviews after eligible collaborations.
+
+C. CREATOR / INFLUENCER
+- Register and create a creator profile.
+- Add biography, location, languages, niches, audience information, and portfolio links.
+- Manage social media channel records.
+- Add publicly available or manually verified audience metrics.
+- Discover and filter published campaigns.
+- Save campaigns to a shortlist.
+- Submit applications with proposals, pricing, and availability.
+- Track application status.
+- Manage accepted collaborations.
+- Review agreed deliverables and deadlines.
+- Submit deliverable URLs, descriptions, and supporting files.
+- Respond to revision requests.
+- View contract records, payment status, and earnings summaries.
+- Review brands after eligible completed collaborations.
+
+D. Optional AGENCY role:
+- Create an agency profile.
+- Manage multiple client brands.
+- Invite team members with restricted permissions.
+- Manage campaigns for authorised clients.
+
+Use server-side authorization for every protected operation. Hiding a button in the frontend is not sufficient security.
+
+# 4. PUBLIC WEBSITE AND AUTHENTICATION
+
+Create the following public pages:
+- Landing page
+- Features page
+- How It Works page
+- Campaign discovery page
+- Creator discovery page with privacy-aware public profile previews
+- Pricing page with illustrative plans
+- About page
+- Contact page
+- FAQ page
+- Login page
+- Registration page
+- Privacy Policy page
+- Terms of Service page
+
+Landing page sections:
+- Premium hero section
+- Clear value proposition
+- Calls to action for brands and creators
+- Featured creators
+- Featured campaigns
+- How the platform works
+- Platform benefits
+- Testimonials using clearly labelled sample/demo content
+- Frequently asked questions
+- Footer with navigation and legal links
+
+Authentication requirements:
+- Registration for the appropriate user roles.
+- Login and logout.
+- Password hashing using Spring Security's supported password encoder.
+- Session-based authentication with secure cookie configuration.
+- Role-based redirects and dashboards.
+- Input validation and helpful error messages.
+- Safe session invalidation on logout.
+- Rate limiting or an equivalent protective strategy for sensitive authentication endpoints.
+- Account suspension checks.
+- Secure password reset workflow when email delivery is configured.
+- CSRF protection for cookie-based authenticated requests.
+- Never expose password hashes or authentication secrets through APIs.
+
+Do not implement insecure authentication by storing passwords or trusted role values in browser localStorage.
+
+# 5. CREATOR DISCOVERY AND SEARCH
+
+Create a powerful creator marketplace with:
+- Profile photo or avatar.
+- Creator name and biography.
+- Primary content niche.
+- Social media platforms.
+- Follower count and engagement metrics where available.
+- Audience location and language information.
+- Content format preferences.
+- Indicative collaboration rates.
+- Portfolio links.
+- Availability status.
+- Profile completeness indicator.
+- Verification status clearly distinguished from platform endorsement.
+
+Provide filters for:
+- Content niche
+- Social platform
+- Minimum and maximum follower count
+- Audience location
+- Language
+- Budget range
+- Engagement rate when reliable data is available
+- Creator location
+- Availability
+
+Support:
+- Keyword search
+- Sorting
+- Pagination
+- Empty states
+- Loading states
+- Clear filter controls
+
+Do not invent real social media metrics or imply that unverified figures are verified. Use sample data only when clearly labelled as demonstration data.
+
+# 6. CAMPAIGN MANAGEMENT
+
+A brand must be able to create a campaign with:
+- Campaign title
+- Description and marketing objectives
+- Product or service details
+- Target audience
+- Required social media platforms
+- Preferred creator niches
+- Required content formats
+- Campaign start and end dates
+- Application deadline
+- Minimum and maximum budget
+- Compensation model
+- Number of creators required
+- Deliverable requirements
+- Review and approval rules
+- Campaign status
+
+Campaign lifecycle:
+DRAFT → PUBLISHED → PAUSED or CLOSED.
+
+Track applications separately from campaign status.
+
+A brand must be able to:
+- Edit draft campaigns.
+- Publish valid campaigns.
+- Pause or close campaigns.
+- Review incoming applications.
+- Shortlist applicants.
+- Accept or reject applicants.
+- Avoid accepting more creators than the campaign capacity allows.
+- View campaign activity history.
+
+A creator must be able to:
+- View public campaigns.
+- Filter and search campaigns.
+- Apply before the deadline.
+- Save campaigns.
+- View their application history.
+- Withdraw an application only when the application rules permit it.
+
+Prevent duplicate applications by the same creator for the same campaign.
+
+# 7. APPLICATION AND COLLABORATION WORKFLOW
+
+Build a complete workflow:
+
+1. A brand creates and publishes a campaign.
+2. Creators discover the campaign.
+3. A creator submits a proposal, proposed price, availability, and relevant portfolio links.
+4. The brand reviews the application.
+5. The brand shortlists, accepts, or rejects the application.
+6. An accepted application creates or activates a collaboration record.
+7. The parties agree on contract terms and deliverables.
+8. The creator submits deliverables.
+9. The brand approves them or requests revisions.
+10. The collaboration moves through its agreed completion process.
+11. Payment status is updated using the configured payment workflow.
+12. Eligible parties submit reviews.
+
+Use explicit, validated state transitions. Reject invalid transitions on the backend.
+
+Keep a history of important status changes, timestamps, and responsible users.
+
+# 8. DELIVERABLE AND DEADLINE TRACKING
+
+Each collaboration may contain multiple deliverables.
+
+A deliverable should support:
+- Deliverable title
+- Description
+- Required platform
+- Content format
+- Due date
+- Submission URL
+- Optional uploaded supporting file
+- Submission notes
+- Revision number
+- Review comments
+- Submitted timestamp
+- Reviewed timestamp
+- Status
+
+Suggested statuses:
+PENDING, IN_PROGRESS, SUBMITTED, REVISION_REQUESTED, APPROVED, REJECTED, OVERDUE.
+
+Provide:
+- Collaboration progress indicator
+- Deadline calendar or timeline
+- Upcoming deadlines
+- Overdue deliverable list
+- Submission history
+- Revision history
+- Brand feedback panel
+
+Validate that a creator can only access or submit deliverables belonging to their own authorised collaborations.
+
+# 9. CONTRACT MANAGEMENT
+
+Create a contract record associated with an accepted collaboration.
+
+Store:
+- Contract reference number
+- Brand and creator references
+- Agreed compensation
+- Currency
+- Deliverables and deadlines
+- Usage rights and licensing terms
+- Revision allowance
+- Cancellation terms
+- Payment schedule
+- Agreement status
+- Created timestamp
+- Acceptance timestamps
+- Contract version
+
+For the initial version:
+- Generate a printable contract summary.
+- Allow authorised parties to review and acknowledge terms.
+- Preserve previous contract versions.
+- Record acceptance events with timestamps.
+- Make changes to agreed terms auditable.
+
+Do not claim that a simple checkbox constitutes a legally valid electronic signature in every jurisdiction. Do not fabricate signatures. Design the system so that a proper e-signature provider can be integrated later.
+
+# 10. BUDGET AND PAYMENT TRACKING
+
+Build a payment management module that records:
+- Collaboration reference
+- Brand payer
+- Creator payee
+- Agreed amount and currency
+- Payment milestone
+- Due date
+- Amount paid
+- Remaining amount
+- Payment status
+- External transaction reference when applicable
+- Payment timestamps
+- Failure or dispute notes
+
+Suggested statuses:
+NOT_DUE, DUE, PROCESSING, PAID, FAILED, REFUNDED, DISPUTED.
+
+Support a manual payment-record workflow for the first version.
+
+IMPORTANT:
+- Do not claim that money was transferred when only a database record changed.
+- Do not collect or store raw card numbers, CVVs, bank passwords, or payment credentials.
+- Do not create a fake payment gateway.
+- If a payment provider is integrated later, use its official SDK and sandbox.
+- Verify payment webhooks on the server.
+- Make payment updates idempotent.
+- Prevent duplicate payment processing.
+- Use database transactions for related financial updates.
+- Clearly distinguish a recorded payment status from a verified external payment.
+
+# 11. CAMPAIGN ANALYTICS
+
+Create dashboards for brands and creators.
+
+Brand dashboard metrics:
+- Total campaigns
+- Active campaigns
+- Total applications
+- Shortlisted creators
+- Accepted collaborations
+- Total planned budget
+- Recorded spending
+- Deliverables awaiting review
+- Completed collaborations
+- Campaign performance summaries
+
+Creator dashboard metrics:
+- Total applications
+- Pending applications
+- Accepted collaborations
+- Active deliverables
+- Upcoming deadlines
+- Completed collaborations
+- Recorded earnings
+- Outstanding payment records
+- Campaign response rate where the calculation is defined
+
+Analytics should include:
+- Campaign performance charts
+- Application funnel
+- Budget allocation
+- Deliverable completion rate
+- Monthly collaboration trends
+- Creator performance comparison
+
+Define every metric and calculation clearly. Do not manufacture real reach, impressions, clicks, conversions, or return on advertising spend.
+
+Allow brands to enter campaign results manually in the first version. Add platform API integrations only when authorised access is available.
+
+# 12. MESSAGING AND NOTIFICATIONS
+
+Implement collaboration-related messaging between authorised brands and creators.
+
+Features:
+- Conversation linked to an application or collaboration.
+- Message timestamps.
+- Read/unread status.
+- Pagination.
+- Safe text rendering.
+- Access control for every conversation.
+
+Notifications:
+- New campaign application
+- Application accepted or rejected
+- Application shortlisted
+- New message
+- Upcoming deliverable deadline
+- Overdue deliverable
+- Deliverable submitted
+- Revision requested
+- Deliverable approved
+- Payment status changed
+- Contract awaiting acknowledgement
+
+Begin with database-backed in-app notifications. Add email notifications using configurable SMTP settings in a later phase.
+
+Never expose messages to users who are not participants in the conversation or authorised administrators.
+
+# 13. RATINGS, REVIEWS, AND REPORTING
+
+Create a review system that:
+- Allows reviews only for eligible completed collaborations.
+- Restricts reviews to the actual participants.
+- Prevents duplicate reviews for the same eligible review event.
+- Validates rating values.
+- Supports a written review.
+- Includes moderation and reporting workflows.
+- Distinguishes published, hidden, and under-review content.
+
+Allow users to report suspicious profiles, misleading campaigns, abusive messages, or potential scams.
+
+Administrators should be able to review reports, record actions, and maintain a moderation history.
+
+Do not let users modify another user's review or report.
+
+# 14. DATABASE DESIGN
+
+Create appropriate JPA entities and database relationships for at least:
+
+- User
+- BrandProfile
+- CreatorProfile
+- AgencyProfile, if the optional agency module is enabled
+- SocialChannel
+- CreatorPortfolioItem
+- Campaign
+- CampaignCategory
+- CampaignApplication
+- SavedCampaign
+- Collaboration
+- Contract
+- ContractVersion
+- Deliverable
+- DeliverableSubmission
+- Conversation
+- ConversationParticipant
+- Message
+- Notification
+- PaymentRecord
+- CampaignMetric
+- Review
+- Report
+- AuditLog
+
+Avoid unnecessary duplication of user and profile data.
+
+Define:
+- Primary keys
+- Foreign keys
+- Appropriate unique constraints
+- Required fields
+- Database indexes
+- Validation rules
+- Created and updated timestamps
+- Optimistic locking where concurrent updates could conflict
+- Correct relationships and deletion behaviour
+
+Use decimal types such as BigDecimal for money, never floating-point types for financial calculations.
+
+Store timestamps consistently and handle display time zones appropriately.
+
+Use database migrations for schema evolution once the project moves beyond the initial prototype.
+
+Do not expose JPA entities directly from controllers. Use request and response DTOs.
+
+# 15. BACKEND ARCHITECTURE AND API DESIGN
+
+Use a maintainable layered architecture:
+
+Controller → Service → Repository → Database.
+
+Separate packages for:
+- configuration
+- security
+- authentication
+- users
+- brands
+- creators
+- campaigns
+- applications
+- collaborations
+- deliverables
+- contracts
+- payments
+- messaging
+- notifications
+- analytics
+- reviews
+- moderation
+- common errors and utilities
+
+Provide REST APIs following consistent naming and HTTP semantics.
+
+Example endpoints:
+
+Authentication:
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+GET /api/auth/me
+
+Creators:
+GET /api/creators
+GET /api/creators/{id}
+PUT /api/creators/me
+GET /api/creators/me/applications
+
+Campaigns:
+GET /api/campaigns
+GET /api/campaigns/{id}
+POST /api/brand/campaigns
+PUT /api/brand/campaigns/{id}
+POST /api/brand/campaigns/{id}/publish
+POST /api/brand/campaigns/{id}/pause
+POST /api/brand/campaigns/{id}/close
+
+Applications:
+POST /api/campaigns/{id}/applications
+GET /api/brand/applications
+POST /api/brand/applications/{id}/shortlist
+POST /api/brand/applications/{id}/accept
+POST /api/brand/applications/{id}/reject
+
+Collaborations:
+GET /api/collaborations
+GET /api/collaborations/{id}
+GET /api/collaborations/{id}/deliverables
+
+Deliverables:
+POST /api/deliverables/{id}/submissions
+POST /api/brand/deliverables/{id}/approve
+POST /api/brand/deliverables/{id}/request-revision
+
+Payments:
+GET /api/payments
+GET /api/payments/{id}
+
+Notifications:
+GET /api/notifications
+POST /api/notifications/{id}/read
+
+Analytics:
+GET /api/brand/analytics/overview
+GET /api/creator/analytics/overview
+
+These are initial examples. Expand them consistently as the project grows.
+
+For every endpoint:
+- Define access permissions.
+- Validate input.
+- Return the correct HTTP status.
+- Return consistent JSON response bodies.
+- Handle errors centrally.
+- Prevent insecure direct object references.
+- Implement pagination and filtering for list endpoints.
+- Avoid leaking internal exception details.
+
+# 16. USER INTERFACE AND EXPERIENCE
+
+Create separate, polished experiences for:
+- Public visitors
+- Brands
+- Creators
+- Administrators
+
+Brand navigation:
+Overview, Discover Creators, Campaigns, Applications, Collaborations, Messages, Payments, Analytics, Company Profile, Settings.
+
+Creator navigation:
+Overview, Discover Campaigns, My Applications, Collaborations, Deliverables, Messages, Earnings, Portfolio, Profile, Settings.
+
+Admin navigation:
+Overview, Users, Campaigns, Reports, Reviews, Disputes, Audit Logs, Settings.
+
+UI requirements:
+- Responsive sidebar and top navigation.
+- Professional typography and consistent spacing.
+- Search and filtering interfaces.
+- Data tables with pagination.
+- Campaign cards and creator cards.
+- Profile pages and edit forms.
+- Modal confirmation for destructive actions.
+- Toast notifications for success and failure.
+- Accessible labels and keyboard-friendly controls.
+- Loading indicators and useful empty states.
+- Clear error messages.
+- Responsive layouts for desktop, tablet, and mobile.
+- Charts with readable labels and appropriate empty states.
+
+Use realistic sample data only when clearly labelled as demo data.
+
+# 17. SECURITY REQUIREMENTS
+
+Implement:
+- Password hashing.
+- Role-based access control.
+- Server-side ownership validation.
+- CSRF protection appropriate to the chosen authentication design.
+- Secure session cookies in production.
+- Input validation.
+- Output escaping and safe rendering.
+- Protection against SQL injection through proper parameterization and ORM usage.
+- File upload size and type restrictions.
+- Secure file storage that prevents executable uploads.
+- Rate limiting for sensitive operations.
+- Audit logging for important administrative and financial actions.
+- Safe handling of configuration secrets.
+- No credentials in source code.
+- No sensitive information in logs.
+- Least-privilege access.
+- Generic external error responses.
+- Dependency updates and security checks.
+
+Add tests proving that a creator cannot access another creator's private information and that a brand cannot modify another brand's campaigns.
+
+Treat user-uploaded files, URLs, messages, and external social media information as untrusted input.
+
+# 18. TESTING AND QUALITY ASSURANCE
+
+Write:
+- Unit tests for service-layer business rules.
+- Integration tests for repositories and controllers.
+- Authentication and authorization tests.
+- Validation tests.
+- Campaign lifecycle tests.
+- Duplicate application tests.
+- Concurrent campaign-capacity tests.
+- Deliverable workflow tests.
+- Payment-state transition tests.
+- Error-handling tests.
+
+Use JUnit 5, Spring Boot Test, and MockMvc where appropriate.
+
+Verify important workflows end-to-end:
+1. Register a brand.
+2. Create and publish a campaign.
+3. Register a creator.
+4. Apply for the campaign.
+5. Accept the application.
+6. Create the collaboration.
+7. Record contract acknowledgement.
+8. Submit a deliverable.
+9. Request and resolve a revision.
+10. Mark the deliverable approved.
+11. Record payment status.
+12. Complete the collaboration and submit eligible reviews.
+
+The project must build successfully before a phase is marked complete.
+
+Never claim a test passed unless it was actually executed successfully. If you cannot run commands, clearly identify the steps that I must run and report the result.
+
+# 19. LOCAL DEVELOPMENT AND DEPLOYMENT
+
+Provide exact Windows 11 and VS Code instructions.
+
+Assume:
+- Java 21 is installed.
+- VS Code is installed.
+- Maven may be provided through the Spring Boot Maven Wrapper.
+- The developer is still learning Java and Spring Boot.
+
+Use H2 file-based storage for initial development. Configure MySQL through a separate Spring profile later.
+
+Provide:
+- Complete pom.xml.
+- application.properties.
+- Separate local and production configuration.
+- .gitignore.
+- Sample environment variable file without real secrets.
+- Database migration scripts when applicable.
+- Seed/demo data.
+- REST API testing instructions.
+- Git commands.
+- Dockerfile and Docker Compose in a later phase.
+- Deployment guidance for a suitable hosting environment.
+- Production checklist.
+
+Use environment variables for production database passwords, session secrets, SMTP credentials, and payment-provider secrets.
+
+Never commit real credentials or production personal data.
+
+# 20. REQUIRED PROJECT STRUCTURE
+
+Use a clean Maven project structure similar to:
+
+collabnexus/
+  pom.xml
+  README.md
+  .gitignore
+  Dockerfile
+  docker-compose.yml
+  src/
+    main/
+      java/
+        com/collabnexus/
+          config/
+          security/
+          auth/
+          users/
+          brands/
+          creators/
+          campaigns/
+          applications/
+          collaborations/
+          deliverables/
+          contracts/
+          payments/
+          messaging/
+          notifications/
+          analytics/
+          reviews/
+          moderation/
+          common/
+      resources/
+        application.properties
+        static/
+          index.html
+          css/
+          js/
+          assets/
+        db/
+          migration/
+    test/
+      java/
+        com/collabnexus/
+
+Adjust the package and directory structure when necessary, but keep the architecture understandable.
+
+Do not create dozens of empty files. Add files when they have a clear purpose.
+
+# 21. DEVELOPMENT PHASES
+
+Build the project in these phases:
+
+PHASE 1 — Project foundation
+- Verify Java and Maven Wrapper setup.
+- Create the Spring Boot project.
+- Configure the initial H2 database.
+- Create the static frontend shell.
+- Create health-check and basic test endpoints.
+- Run the project and verify it starts.
+- Provide exact Windows commands and explain them.
+
+PHASE 2 — UI foundation
+- Landing page.
+- Brand and creator registration forms.
+- Login screen.
+- Responsive navigation and visual design.
+- Reusable frontend components.
+
+PHASE 3 — Authentication and profiles
+- Registration and login.
+- Spring Security configuration.
+- Brand and creator profiles.
+- Role-based access control.
+- Ownership tests.
+
+PHASE 4 — Campaign marketplace
+- Campaign creation and management.
+- Public campaign browsing.
+- Creator search and filtering.
+- Pagination and validation.
+
+PHASE 5 — Applications and collaborations
+- Creator applications.
+- Brand review actions.
+- Shortlisting and acceptance.
+- Collaboration records.
+- Validated status transitions.
+
+PHASE 6 — Deliverables and contracts
+- Deliverable management.
+- Submission and revision history.
+- Deadlines.
+- Contract records and version history.
+
+PHASE 7 — Payments and analytics
+- Payment status records.
+- Financial summaries.
+- Dashboard charts.
+- Campaign analytics.
+
+PHASE 8 — Messaging and notifications
+- Conversations.
+- In-app messages.
+- Notifications.
+- Optional email integration.
+
+PHASE 9 — Reviews and administration
+- Ratings and reviews.
+- Reports and moderation.
+- Administrative dashboard.
+- Audit history.
+
+PHASE 10 — Quality and production readiness
+- Automated tests.
+- Security review.
+- MySQL profile.
+- Database migrations.
+- Docker.
+- Deployment.
+- Documentation.
+- Final end-to-end testing.
+
+Do not skip phases without explaining the trade-offs.
+
+# 22. RULES FOR THE AI CODING ASSISTANT
+
+Follow these rules throughout development:
+
+1. Begin with Phase 1 only.
+2. Do not generate the entire application in one response.
+3. Explain what each file does in beginner-friendly language.
+4. Provide the exact file path before each file's complete contents.
+5. Do not provide partial code fragments when a complete file is required.
+6. Never silently replace or delete existing project files.
+7. Before changing an existing file, explain what will change.
+8. Keep frontend API calls consistent with the backend endpoints.
+9. Do not invent API responses or claim backend integration exists before implementing it.
+10. Do not leave critical functionality as TODO comments or non-working placeholder buttons.
+11. Use clear names and maintainable code.
+12. When an error occurs, diagnose it using the actual error message and provide a targeted fix.
+13. After each phase, give commands to build, start, and test the application.
+14. Explain expected terminal output and how to verify the feature in a browser.
+15. Maintain a checklist of completed and pending features.
+16. Preserve existing data and database files.
+17. Ask me to confirm successful execution before proceeding to the next phase.
+18. If a feature needs an external account, API key, paid service, or additional installation, explain this before implementation.
+19. Never expose secrets, invent test results, or claim that a prototype is production-ready.
+20. Prefer simple, working implementations first, then improve architecture safely.
+
+# 23. FIRST RESPONSE REQUIRED
+
+Start by giving me:
+
+1. A concise overview of the proposed architecture.
+2. The prerequisites I should verify on Windows 11.
+3. The exact project creation steps and commands.
+4. The complete initial pom.xml and required configuration files.
+5. The initial directory structure.
+6. The exact commands to run the application.
+7. A simple browser-based verification step.
+8. Common errors and their fixes.
+
+Only implement Phase 1.
+
+Stop and wait for me to confirm that Phase 1 works before proceeding to Phase 2.
