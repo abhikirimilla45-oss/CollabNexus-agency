@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse published CollabNexus campaigns with clear budgets, deliverables, and application deadlines.">
+    <meta name="theme-color" content="#08182b">
+    <title>Discover campaigns | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-marketplace-page="campaigns">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+            <a href="/index.html#platform">Platform</a>
+            <a href="/creators.html">Creators</a>
+            <a href="/campaigns.html" aria-current="page">Campaigns</a>
+            <a href="/index.html#pricing">Pricing</a>
+            <a href="/index.html#faq">FAQ</a>
+            <div class="nav-actions" data-auth-nav>
+                <a class="nav-login" href="/login.html">Log in</a>
+                <a class="button button-gold button-sm" href="/register.html">Get started</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section class="section marketplace-hero">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>Campaign discovery</p>
+                <h1>Briefs with clear budgets, deliverables, and deadlines.</h1>
+                <p>Every campaign below is published by a brand account. Budgets are stated ranges, deadlines are real record values, and demonstration content is labelled.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-tint marketplace-section">
+        <div class="container">
+            <form class="filter-panel" data-campaign-filters novalidate>
+                <div class="filter-grid">
+                    <div class="field">
+                        <label for="campaignQuery">Keyword</label>
+                        <div class="field-control">
+                            <input class="input" id="campaignQuery" name="q" type="search" placeholder="Title, brand, or description">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignNiche">Niche</label>
+                        <div class="field-control">
+                            <select class="select" id="campaignNiche" name="niche">
+                                <option value="">All niches</option>
+                                <option>Beauty &amp; Skincare</option>
+                                <option>Fashion &amp; Lifestyle</option>
+                                <option>Travel &amp; Hospitality</option>
+                                <option>Technology &amp; Productivity</option>
+                                <option>Fitness &amp; Wellness</option>
+                                <option>Food &amp; Drink</option>
+                                <option>Gaming &amp; Entertainment</option>
+                                <option>Business &amp; Finance</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignPlatform">Platform</label>
+                        <div class="field-control">
+                            <select class="select" id="campaignPlatform" name="platform">
+                                <option value="">All platforms</option>
+                                <option>Instagram</option>
+                                <option>TikTok</option>
+                                <option>YouTube</option>
+                                <option>LinkedIn</option>
+                                <option>X (Twitter)</option>
+                                <option>Blog or newsletter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignCategory">Category</label>
+                        <div class="field-control">
+                            <input class="input" id="campaignCategory" name="category" type="text" placeholder="Awareness">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignMinBudget">Minimum budget</label>
+                        <div class="field-control">
+                            <input class="input" id="campaignMinBudget" name="minBudget" type="number" min="0" step="1" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignMaxBudget">Maximum budget</label>
+                        <div class="field-control">
+                            <input class="input" id="campaignMaxBudget" name="maxBudget" type="number" min="0" step="1" placeholder="100000">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignSort">Sort by</label>
+                        <div class="field-control">
+                            <select class="select" id="campaignSort" name="sort">
+                                <option value="createdAt">Newest first</option>
+                                <option value="applicationDeadline">Application deadline</option>
+                                <option value="maxBudget">Highest budget</option>
+                                <option value="title">Title</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="campaignDirection">Direction</label>
+                        <div class="field-control">
+                            <select class="select" id="campaignDirection" name="direction">
+                                <option value="desc">Descending</option>
+                                <option value="asc">Ascending</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="button button-navy" type="submit">Apply filters</button>
+                    <button class="button button-ghost" type="button" data-filters-clear>Clear filters</button>
+                    <span class="demo-badge">Live campaign records</span>
+                </div>
+            </form>
+
+            <div class="results-bar">
+                <p data-results-summary role="status" aria-live="polite">Loading campaigns...</p>
+            </div>
+
+            <div class="campaign-grid marketplace-grid" data-campaign-grid></div>
+            <div class="marketplace-empty" data-marketplace-empty hidden>
+                <h2>No campaigns match those filters.</h2>
+                <p>Try a broader keyword, a different platform, or clear the budget range.</p>
+                <button class="button button-navy" type="button" data-filters-clear>Clear filters</button>
+            </div>
+
+            <nav class="pagination" data-pagination aria-label="Campaign pages" hidden>
+                <button class="button button-ghost button-sm" type="button" data-page-prev>Previous</button>
+                <span data-page-label>Page 1 of 1</span>
+                <button class="button button-ghost button-sm" type="button" data-page-next>Next</button>
+            </nav>
+        </div>
+    </section>
+
+    <section class="section cta-band">
+        <div class="container cta-inner">
+            <div>
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>For creators</p>
+                <h2>Create a profile, then apply with a considered proposal.</h2>
+                <p>Applications include your price, availability, and portfolio link. Brands review every proposal in the workspace.</p>
+            </div>
+            <div class="cta-actions">
+                <a class="button button-navy" href="/register.html?role=creator">Join as a creator</a>
+                <a class="button button-ghost" href="/creators.html">Browse creators</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a class="brand brand-footer" href="/index.html" aria-label="CollabNexus home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" role="img" focusable="false">
+                        <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="brand-copy">
+                    <span class="brand-name">CollabNexus</span>
+                    <span class="brand-tagline">Where Brand Meets Influence</span>
+                </span>
+            </a>
+            <p>A premium collaboration platform for brands and creators. Built in the open, one verified phase at a time.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+            <div>
+                <h2>Marketplace</h2>
+                <a href="/creators.html">Discover creators</a>
+                <a href="/campaigns.html">Discover campaigns</a>
+                <a href="/index.html#pricing">Pricing</a>
+            </div>
+            <div>
+                <h2>Platform</h2>
+                <a href="/index.html#platform">Overview</a>
+                <a href="/index.html#workflow">How it works</a>
+                <a href="/index.html#faq">FAQ</a>
+            </div>
+            <div>
+                <h2>Account</h2>
+                <a href="/register.html">Create account</a>
+                <a href="/login.html">Log in</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> CollabNexus. Portfolio project in active development.</p>
+        <div class="footer-meta">
+            <span class="footer-status" role="status" aria-live="polite">
+                <span class="status-dot" data-status-dot aria-hidden="true"></span>
+                <span data-status-label>Checking platform status</span>
+            </span>
+            <span class="footer-legal">
+                <a href="/privacy.html">Privacy policy</a>
+                <a href="/terms.html">Terms of service</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<div class="modal-backdrop" data-apply-modal hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+        <div class="modal-head">
+            <div>
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>Creator application</p>
+                <h2 id="applyModalTitle">Apply to <span data-apply-campaign></span></h2>
+            </div>
+            <button class="modal-close" type="button" data-apply-close aria-label="Close application form">Close</button>
+        </div>
+        <form class="form" data-apply-form novalidate>
+            <div class="field">
+                <label for="applyProposal">Proposal</label>
+                <div class="field-control">
+                    <textarea class="input textarea" id="applyProposal" name="proposal" rows="5" maxlength="2000" required placeholder="Explain your angle, the content you would make, and why your audience fits this brief."></textarea>
+                </div>
+                <p class="field-error" data-field-error>Add a short proposal.</p>
+            </div>
+            <div class="form-row">
+                <div class="field">
+                    <label for="applyPrice">Proposed price <span class="field-hint">(optional)</span></label>
+                    <div class="field-control">
+                        <input class="input" id="applyPrice" name="proposedPrice" type="number" min="0" step="0.01">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="applyCurrency">Currency</label>
+                    <div class="field-control">
+                        <select class="select" id="applyCurrency" name="currency">
+                            <option>USD</option><option>GBP</option><option>EUR</option><option>SGD</option>
+                            <option>AED</option><option>INR</option><option>AUD</option><option>CAD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="field">
+                    <label for="applyAvailableFrom">Available from <span class="field-hint">(optional)</span></label>
+                    <div class="field-control">
+                        <input class="input" id="applyAvailableFrom" name="availableFrom" type="date">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="applyPortfolio">Portfolio URL <span class="field-hint">(optional)</span></label>
+                    <div class="field-control">
+                        <input class="input" id="applyPortfolio" name="portfolioUrl" type="url" maxlength="500" placeholder="https://example.com/portfolio">
+                    </div>
+                    <p class="field-error" data-field-error>Enter a full URL including https://.</p>
+                </div>
+            </div>
+            <div class="form-alert" data-apply-alert role="alert" hidden>
+                <span data-apply-alert-text></span>
+            </div>
+            <div class="form-actions">
+                <button class="button button-navy" type="submit" data-apply-submit>Submit application</button>
+                <button class="button button-ghost" type="button" data-apply-cancel>Cancel</button>
+            </div>
+            <p class="fine-line">The brand reviews your proposal in the workspace. Apply once per campaign; duplicate applications are rejected by the server.</p>
+        </form>
+    </div>
+</div>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="/js/ui.js" defer></script>
+<script src="/js/auth.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/marketplace.js" defer></script>
+</body>
+</html>

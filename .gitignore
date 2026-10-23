@@ -1,0 +1,13 @@
+target/
+data/
+logs/
+*.log
+.env
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.class
+uploads/
+data-backup-*/
+.monkeycode-tmp-files/

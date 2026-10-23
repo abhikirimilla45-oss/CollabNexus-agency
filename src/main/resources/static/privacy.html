@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CollabNexus privacy policy for the portfolio marketplace build.">
+    <meta name="theme-color" content="#08182b">
+    <title>Privacy Policy | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+            <a href="/index.html#platform">Platform</a>
+            <a href="/index.html#pricing">Pricing</a>
+            <a href="/index.html#faq">FAQ</a>
+            <div class="nav-actions">
+                <a class="nav-login" href="/index.html">Back to home</a>
+                <a class="button button-gold button-sm" href="/register.html">Create account</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="legal-main" id="main">
+    <div class="container legal-shell">
+        <nav class="legal-nav" aria-label="On this page">
+            <h2>On this page</h2>
+            <a href="#overview">Overview</a>
+            <a href="#information">Information we collect</a>
+            <a href="#use">How we use information</a>
+            <a href="#cookies">Cookies and sessions</a>
+            <a href="#retention">Data retention</a>
+            <a href="#security">Security</a>
+            <a href="#rights">Your rights</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <article class="legal-article">
+            <p class="legal-kicker">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p class="legal-meta">Last updated 22 October 2026 · Draft for the CollabNexus portfolio build</p>
+
+            <div class="notice-strip">
+                This policy is a working draft for a portfolio project. It is not legal advice and must be reviewed by a qualified adviser before the platform accepts real users or processes real personal data.
+            </div>
+
+            <h2 id="overview">Overview</h2>
+            <p>CollabNexus is a two-sided marketplace that connects brands and agencies with content creators. This policy explains what information the application is designed to collect, why it is needed, and how it should be protected.</p>
+            <p>The application is currently in an early development phase. Some features described here, including full account registration and profile management, are not yet active.</p>
+
+            <h2 id="information">Information we collect</h2>
+            <p>When the relevant features are enabled, the platform may collect:</p>
+            <ul>
+                <li>Account details such as name, email address, role, and a securely hashed password.</li>
+                <li>Brand profile information such as company name, website, and contact details.</li>
+                <li>Creator profile information such as biography, location, languages, niches, social channels, portfolio links, and indicative rates.</li>
+                <li>Campaign, application, collaboration, deliverable, contract, and payment-record data entered by users.</li>
+                <li>Technical information needed to operate the service securely, such as session identifiers and basic request logs.</li>
+            </ul>
+            <p>Do not submit raw card numbers, bank passwords, government identity documents, or other highly sensitive information through free-text fields.</p>
+
+            <h2 id="use">How we use information</h2>
+            <ul>
+                <li>To create and secure accounts and enforce role-based access.</li>
+                <li>To operate creator discovery, campaign management, and collaboration workflows.</li>
+                <li>To record deliverables, approvals, contract acknowledgements, and payment statuses.</li>
+                <li>To investigate reports, disputes, and suspected misuse.</li>
+                <li>To improve the reliability and usability of the service.</li>
+            </ul>
+            <p>The platform does not sell personal data. It does not invent audience metrics or present unverified figures as verified.</p>
+
+            <h2 id="cookies">Cookies and sessions</h2>
+            <p>Authentication is designed to use server-side sessions with secure, HTTP-only cookies. A session cookie identifies a signed-in browser; it does not contain a password or trusted role value that the browser can edit.</p>
+            <p>Where cookie-based authentication is used, state-changing requests require CSRF protection. Production deployments must mark session cookies as secure and serve the application over HTTPS.</p>
+
+            <h2 id="retention">Data retention</h2>
+            <p>Account, campaign, collaboration, contract, and payment records may be retained for as long as needed to operate the service and meet legal obligations. Moderation and audit records may be retained longer where necessary to investigate abuse or disputes.</p>
+            <p>Retention periods must be reviewed before public launch and documented in a production-ready policy.</p>
+
+            <h2 id="security">Security</h2>
+            <ul>
+                <li>Passwords are hashed with a supported Spring Security password encoder and are never returned through an API.</li>
+                <li>Authorization is enforced on the server for every protected operation.</li>
+                <li>Database access uses parameterized queries through the ORM.</li>
+                <li>File uploads must be size- and type-restricted and stored outside executable paths.</li>
+                <li>Sensitive administrative and financial actions are intended to be audit logged.</li>
+                <li>Secrets must be supplied through environment variables and never committed to source control.</li>
+            </ul>
+            <p>No internet service can promise perfect security. Report suspected vulnerabilities responsibly rather than testing against live accounts or data.</p>
+
+            <h2 id="rights">Your rights</h2>
+            <p>Depending on your jurisdiction, you may have rights to access, correct, export, restrict, or delete personal information. The application is being designed to support these requests through authenticated account controls and administrative processes.</p>
+            <p>Before public launch, this section must be adapted to the jurisdictions in which CollabNexus actually operates.</p>
+
+            <h2 id="contact">Contact</h2>
+            <p>Privacy questions can be directed to the placeholder address <a href="mailto:privacy@collabnexus.example">privacy@collabnexus.example</a>. A monitored contact channel will be published before the platform accepts real users.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="mini-footer">
+    <div class="container">
+        <p>&copy; <span data-current-year>2026</span> CollabNexus. Portfolio project in active development.</p>
+        <nav aria-label="Legal">
+            <a href="/terms.html">Terms</a>
+            <a href="/register.html">Create account</a>
+            <a href="/index.html">Home</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/js/ui.js" defer></script>
+</body>
+</html>

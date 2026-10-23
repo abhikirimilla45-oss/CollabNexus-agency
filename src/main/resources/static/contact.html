@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the CollabNexus team about campaigns, payments, security, privacy, or partnerships. Messages are stored for administrator review.">
+    <meta name="theme-color" content="#08182b">
+    <title>Contact | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+            <a href="/features.html">Platform</a>
+            <a href="/creators.html">Creators</a>
+            <a href="/campaigns.html">Campaigns</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/faq.html">FAQ</a>
+            <div class="nav-actions" data-auth-nav>
+                <a class="nav-login" href="/login.html">Log in</a>
+                <a class="button button-gold button-sm" href="/register.html">Get started</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section class="section marketplace-hero">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>Contact</p>
+                <h1>Tell us what you need to move forward.</h1>
+                <p>Questions about campaigns, recorded payments, security, privacy, or a partnership? Send a message and a platform administrator can review it in the moderation workspace.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-tint">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-panel">
+                    <div class="auth-panel-head">
+                        <h2>Send a message</h2>
+                        <p>Fields marked required are needed so we can understand and route your request.</p>
+                    </div>
+
+                    <div class="form-alert" data-contact-alert role="status" aria-live="polite" hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+                        <span data-contact-alert-text></span>
+                    </div>
+
+                    <form class="form" data-contact-form novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contactName">Full name</label>
+                                <div class="field-control">
+                                    <input class="input" id="contactName" name="name" type="text" autocomplete="name" minlength="2" maxlength="120" placeholder="Alex Morgan" required>
+                                </div>
+                                <p class="field-error" data-field-error>Enter your full name.</p>
+                            </div>
+
+                            <div class="field">
+                                <label for="contactEmail">Email address</label>
+                                <div class="field-control">
+                                    <input class="input" id="contactEmail" name="email" type="email" autocomplete="email" maxlength="180" placeholder="you@company.com" required>
+                                </div>
+                                <p class="field-error" data-field-error>Enter a valid email address.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contactRole">I am contacting as</label>
+                                <div class="field-control">
+                                    <select class="select" id="contactRole" name="role" required>
+                                        <option value="">Select an option</option>
+                                        <option value="BRAND">A brand</option>
+                                        <option value="CREATOR">A creator</option>
+                                        <option value="AGENCY">An agency</option>
+                                        <option value="OTHER">Something else</option>
+                                    </select>
+                                </div>
+                                <p class="field-error" data-field-error>Select who you are contacting as.</p>
+                            </div>
+
+                            <div class="field">
+                                <label for="contactTopic">Topic</label>
+                                <div class="field-control">
+                                    <select class="select" id="contactTopic" name="topic" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="GENERAL">General question</option>
+                                        <option value="CAMPAIGNS">Campaigns and applications</option>
+                                        <option value="PAYMENTS">Payments and earnings</option>
+                                        <option value="SECURITY">Security concern</option>
+                                        <option value="PRIVACY">Privacy request</option>
+                                        <option value="PARTNERSHIP">Partnership</option>
+                                    </select>
+                                </div>
+                                <p class="field-error" data-field-error>Select a topic.</p>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="contactMessage">Message</label>
+                            <div class="field-control">
+                                <textarea class="input textarea" id="contactMessage" name="message" rows="6" minlength="20" maxlength="4000" placeholder="Share the context, what you have already tried, and what outcome you need." required></textarea>
+                            </div>
+                            <p class="field-hint">At least 20 characters. Do not include passwords, card numbers, or other secrets.</p>
+                            <p class="field-error" data-field-error>Write at least 20 characters.</p>
+                        </div>
+
+                        <label class="checkbox-field" data-contact-consent>
+                            <input type="checkbox" name="consent" required>
+                            <span>I agree to the <a href="/privacy.html">privacy policy</a> and understand that this message is stored for administrator review.</span>
+                        </label>
+
+                        <div class="form-actions">
+                            <button class="button button-navy" type="submit" data-contact-submit>Send message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="contact-aside" aria-label="Contact information">
+                    <div class="contact-card">
+                        <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>What happens next</p>
+                        <h3>A real review queue, not a black hole.</h3>
+                        <ol class="contact-steps">
+                            <li><span>01</span><p>Your message is validated, rate limited, and stored in the platform database.</p></li>
+                            <li><span>02</span><p>An administrator can read it and mark it handled from the contact inbox.</p></li>
+                            <li><span>03</span><p>For urgent security or privacy matters, include only the minimum personal data needed.</p></li>
+                        </ol>
+                    </div>
+
+                    <div class="contact-card contact-card-dark">
+                        <h3>Before you write</h3>
+                        <p>This portfolio deployment does not claim to operate a staffed support inbox or a guaranteed response time. Messages are stored for demonstration and administrator review.</p>
+                        <ul class="check-list">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Never send passwords or payment credentials.</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Use the in-app report flow for a specific profile, campaign, or message.</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Use the FAQ for questions about accounts, payments, and verification.</li>
+                        </ul>
+                        <a class="button button-ghost" href="/faq.html">Read the FAQ</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a class="brand brand-footer" href="/index.html" aria-label="CollabNexus home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" role="img" focusable="false">
+                        <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="brand-copy">
+                    <span class="brand-name">CollabNexus</span>
+                    <span class="brand-tagline">Where Brand Meets Influence</span>
+                </span>
+            </a>
+            <p>A premium collaboration platform for brands and creators. Built in the open, one verified phase at a time.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+            <div>
+                <h2>Marketplace</h2>
+                <a href="/creators.html">Discover creators</a>
+                <a href="/campaigns.html">Discover campaigns</a>
+                <a href="/pricing.html">Pricing</a>
+            </div>
+            <div>
+                <h2>Platform</h2>
+                <a href="/features.html">Features</a>
+                <a href="/how-it-works.html">How it works</a>
+                <a href="/about.html">About</a>
+                <a href="/faq.html">FAQ</a>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <a href="/contact.html">Contact</a>
+                <a href="/register.html">Create account</a>
+                <a href="/login.html">Log in</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> CollabNexus. Portfolio project in active development.</p>
+        <div class="footer-meta">
+            <span class="footer-status" role="status" aria-live="polite">
+                <span class="status-dot" data-status-dot aria-hidden="true"></span>
+                <span data-status-label>Checking platform status</span>
+            </span>
+            <span class="footer-legal">
+                <a href="/privacy.html">Privacy policy</a>
+                <a href="/terms.html">Terms of service</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="/js/ui.js" defer></script>
+<script src="/js/auth.js" defer></script>
+<script src="/js/app.js" defer></script>
+<script src="/js/contact.js" defer></script>
+</body>
+</html>

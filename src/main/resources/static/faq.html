@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Answers to common questions about CollabNexus accounts, campaigns, applications, contracts, deliverables, payments, and security.">
+    <meta name="theme-color" content="#08182b">
+    <title>Frequently asked questions | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+            <a href="/features.html">Platform</a>
+            <a href="/creators.html">Creators</a>
+            <a href="/campaigns.html">Campaigns</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/faq.html" aria-current="page">FAQ</a>
+            <div class="nav-actions" data-auth-nav>
+                <a class="nav-login" href="/login.html">Log in</a>
+                <a class="button button-gold button-sm" href="/register.html">Get started</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section class="section marketplace-hero">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>Frequently asked questions</p>
+                <h1>Straight answers about how the platform works.</h1>
+                <p>If something is not covered here, the contact page explains how to reach the project maintainer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-tint">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-intro reveal">
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span>Start here</p>
+                    <h2>Questions before you join.</h2>
+                    <p>CollabNexus is a portfolio project in active development. This page separates what works today from what is deliberately deferred.</p>
+                    <a class="button button-navy" href="/register.html">Create your account</a>
+                </div>
+
+                <div class="faq-list reveal">
+                    <details class="faq-item" open>
+                        <summary>What is CollabNexus?</summary>
+                        <p>CollabNexus is a two-sided influencer marketing platform for brands, agencies, and creators. It covers creator discovery, campaign publishing, applications, collaborations, contracts, deliverables, payment records, messaging, reviews, and moderation.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is the marketplace live?</summary>
+                        <p>Yes, the application is runnable and the workflows are implemented. The included creators, campaigns, metrics, and testimonials are clearly labelled demonstration data, not real marketplace records.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How are creators and brands matched?</summary>
+                        <p>Brands publish structured briefs with niche, platform, budget, and timing. Creators search and filter those briefs, then apply with a proposal, price, and availability. There is no hidden ranking or invented performance score.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can a creator apply to the same campaign twice?</summary>
+                        <p>No. A unique database constraint and a service-level check prevent duplicate applications for the same creator and campaign. A withdrawn application can be reviewed under the documented application rules.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What happens when a brand accepts an application?</summary>
+                        <p>An accepted application creates a collaboration record with the agreed amount and currency. The collaboration then moves through explicit states to contract acknowledgement, delivery, completion, or cancellation. Invalid transitions are rejected by the API.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can a campaign accept more creators than its capacity?</summary>
+                        <p>No. Acceptance checks the campaign capacity inside a transaction and the database enforces unique applications. A concurrency test exercises the capacity rule so simultaneous accepts cannot exceed the limit.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does CollabNexus process payments?</summary>
+                        <p>No. The first version records payment milestones and status changes manually. It never stores card numbers or claims that money moved when only a database record changed. A verified payment provider can be integrated later.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Are the follower and engagement figures real?</summary>
+                        <p>No. Every figure shown on the public site is illustrative sample data for design review. Real profile metrics would only be entered or imported with authorised access.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How is account data protected?</summary>
+                        <p>Passwords are hashed with BCrypt. Authentication uses server-side sessions with HTTP-only, SameSite cookies and CSRF tokens. Role checks and ownership validation happen on the server, and suspended accounts are rejected on every authenticated request.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I upload files?</summary>
+                        <p>Creators can attach a supporting file to a deliverable submission. Uploads are size-limited, type-checked, stored outside the web root, and served only to authorised collaboration participants. Executable content is never served as a web page.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do reviews and reports work?</summary>
+                        <p>Only participants in an eligible completed collaboration can review each other, and duplicate reviews are blocked. Users can report profiles, campaigns, messages, reviews, or other issues. Administrators review reports, record actions, and keep a moderation history.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can agencies manage multiple brands?</summary>
+                        <p>An agency role is planned as an optional extension. The current build supports one brand profile per brand account and keeps the user and profile records separate so an agency module can be added without duplicating data.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What should I read next?</summary>
+                        <p>See the features page for the delivered capabilities, the how-it-works page for the collaboration lifecycle, and the pricing page for illustrative plans. The project README documents local setup, architecture, security decisions, and the production checklist.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="cta-copy">
+                    <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Still curious?</p>
+                    <h2>Walk through the workflow yourself.</h2>
+                    <p>Create a free account, open the demonstration workspace, and follow a campaign from draft to payment record.</p>
+                </div>
+                <div class="cta-actions">
+                    <a class="button button-gold" href="/register.html">Create an account</a>
+                    <a class="button button-ghost" href="/contact.html">Contact the team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a class="brand brand-footer" href="/index.html" aria-label="CollabNexus home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" role="img" focusable="false">
+                        <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="brand-copy">
+                    <span class="brand-name">CollabNexus</span>
+                    <span class="brand-tagline">Where Brand Meets Influence</span>
+                </span>
+            </a>
+            <p>A premium collaboration platform for brands and creators. Built in the open, one verified phase at a time.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+            <div>
+                <h2>Marketplace</h2>
+                <a href="/creators.html">Discover creators</a>
+                <a href="/campaigns.html">Discover campaigns</a>
+                <a href="/pricing.html">Pricing</a>
+            </div>
+            <div>
+                <h2>Platform</h2>
+                <a href="/features.html">Features</a>
+                <a href="/how-it-works.html">How it works</a>
+                <a href="/about.html">About</a>
+                <a href="/faq.html">FAQ</a>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <a href="/contact.html">Contact</a>
+                <a href="/register.html">Create account</a>
+                <a href="/login.html">Log in</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> CollabNexus. Portfolio project in active development.</p>
+        <div class="footer-meta">
+            <span class="footer-status" role="status" aria-live="polite">
+                <span class="status-dot" data-status-dot aria-hidden="true"></span>
+                <span data-status-label>Checking platform status</span>
+            </span>
+            <span class="footer-legal">
+                <a href="/privacy.html">Privacy policy</a>
+                <a href="/terms.html">Terms of service</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="/js/ui.js" defer></script>
+<script src="/js/auth.js" defer></script>
+<script src="/js/app.js" defer></script>
+</body>
+</html>

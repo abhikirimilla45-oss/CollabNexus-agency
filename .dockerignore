@@ -1,0 +1,15 @@
+.git
+.gitignore
+.mvn/wrapper/maven-wrapper.jar
+target
+data
+data-backup-*
+uploads
+logs
+.env
+.idea
+.vscode
+*.iml
+*.log
+README.md
+collaboration prompt.txt

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to CollabNexus and manage campaigns, collaborations, deliverables, and payments.">
+    <meta name="theme-color" content="#08182b">
+    <title>Log in | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-body">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+            <a href="/index.html#platform">Platform</a>
+            <a href="/index.html#pricing">Pricing</a>
+            <a href="/index.html#faq">FAQ</a>
+            <div class="nav-actions" data-auth-nav>
+                <a class="nav-login" href="/index.html">Back to home</a>
+                <a class="button button-gold button-sm" href="/register.html">Create account</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="auth-main" id="main">
+    <div class="auth-shell">
+        <aside class="auth-aside">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Member access</p>
+            <h1>Welcome back to the nexus.</h1>
+            <p>Your campaigns, collaborations, deliverables, and payment records stay in one calm, role-aware workspace.</p>
+
+            <ul class="auth-benefits">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+                    Role-based dashboards for brands and creators
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+                    Secure server-side sessions with CSRF protection
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+                    One shared history for every important decision
+                </li>
+            </ul>
+
+            <p class="auth-quote">"The best collaboration tools disappear into the work. That is the standard we are building to."
+                <strong>CollabNexus product principle</strong>
+            </p>
+        </aside>
+
+        <section class="auth-panel" aria-labelledby="loginTitle">
+            <div class="auth-panel-head">
+                <h2 id="loginTitle">Log in</h2>
+                <p>New to CollabNexus? <a href="/register.html">Create an account</a>.</p>
+            </div>
+
+            <div class="demo-access">
+                <div class="demo-access-head">
+                    <span class="demo-badge">Demo access</span>
+                    <p>Sample accounts are seeded for local evaluation. All data is fictional.</p>
+                </div>
+                <div class="demo-access-grid">
+                    <button class="demo-chip" type="button" data-demo-fill data-email="brand@collabnexus.demo" data-password="Demo!Pass1234">
+                        <strong>Brand</strong>
+                        <span>brand@collabnexus.demo</span>
+                    </button>
+                    <button class="demo-chip" type="button" data-demo-fill data-email="creator@collabnexus.demo" data-password="Demo!Pass1234">
+                        <strong>Creator</strong>
+                        <span>creator@collabnexus.demo</span>
+                    </button>
+                    <button class="demo-chip" type="button" data-demo-fill data-email="admin@collabnexus.demo" data-password="Demo!Pass1234">
+                        <strong>Admin</strong>
+                        <span>admin@collabnexus.demo</span>
+                    </button>
+                </div>
+                <p class="demo-access-foot">Password for all demo accounts: <code>Demo!Pass1234</code></p>
+            </div>
+
+            <form class="form js-validate-form" data-auth-form="login" data-form-type="login" novalidate>
+                <div class="field">
+                    <label for="loginEmail">Work email</label>
+                    <div class="field-control">
+                        <input class="input" id="loginEmail" name="email" type="email" autocomplete="username" placeholder="you@company.com" required>
+                    </div>
+                    <p class="field-error" data-field-error>Enter a valid email address.</p>
+                </div>
+
+                <div class="field">
+                    <label for="loginPassword">Password</label>
+                    <div class="field-control">
+                        <input class="input" id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required>
+                        <button class="password-toggle" type="button" data-password-toggle aria-controls="loginPassword" aria-label="Show password">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/><circle cx="12" cy="12" r="2.6"/></svg>
+                        </button>
+                    </div>
+                    <p class="field-hint">Passwords are never stored in the browser.</p>
+                    <p class="field-error" data-field-error>Enter your password.</p>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-navy" type="submit">Log in securely</button>
+                </div>
+
+                <div class="form-alert" data-auth-alert role="alert" hidden>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5"/><path d="M12 16.5h.01"/></svg>
+                    <span data-auth-alert-text></span>
+                </div>
+            </form>
+
+            <p class="form-foot">Sessions end after 30 minutes of inactivity. Password reset and email delivery arrive in a later phase.</p>
+        </section>
+    </div>
+</main>
+
+<footer class="mini-footer">
+    <div class="container">
+        <p>&copy; <span data-current-year>2026</span> CollabNexus. Portfolio project in active development.</p>
+        <nav aria-label="Legal">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="/index.html">Home</a>
+        </nav>
+    </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="/js/ui.js" defer></script>
+<script src="/js/auth.js" defer></script>
+</body>
+</html>

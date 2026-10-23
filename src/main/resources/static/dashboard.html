@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your CollabNexus workspace for profiles, campaigns, collaborations, and payments.">
+    <meta name="theme-color" content="#08182b">
+    <title>Workspace | CollabNexus</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="dashboard-body">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="app-shell">
+    <aside class="app-sidebar" id="appSidebar" aria-label="Workspace navigation">
+        <a class="brand app-brand" href="/index.html" aria-label="CollabNexus home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 44 44" role="img" focusable="false">
+                    <path d="M8 31V15l14 10 14-10v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="31" r="1.2" fill="currentColor"/>
+                    <circle cx="22" cy="25" r="1.2" fill="currentColor"/>
+                    <circle cx="36" cy="31" r="1.2" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <span class="brand-name">CollabNexus</span>
+                <span class="brand-tagline">Where Brand Meets Influence</span>
+            </span>
+        </a>
+
+        <p class="side-role" data-side-role>Workspace</p>
+        <nav class="side-nav" data-side-nav aria-label="Workspace sections"></nav>
+
+        <div class="side-foot">
+            <div class="side-user">
+                <span class="avatar-initials" data-avatar aria-hidden="true">CN</span>
+                <span class="side-user-copy">
+                    <strong data-user-name>Loading...</strong>
+                    <span data-user-email></span>
+                </span>
+            </div>
+            <button class="button button-ghost button-sm side-logout" type="button" data-logout>Sign out</button>
+            <p class="side-note">Session protected with HTTP-only cookies and CSRF tokens.</p>
+        </div>
+    </aside>
+
+    <div class="app-main">
+        <header class="app-topbar">
+            <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-controls="appSidebar" aria-expanded="false" aria-label="Open navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="app-title">
+                <p class="app-kicker" data-page-kicker>Workspace overview</p>
+                <h1 data-page-title>Overview</h1>
+            </div>
+            <div class="topbar-actions">
+                <span class="status-pill" data-status-pill><span class="status-dot is-up" aria-hidden="true"></span>Account active</span>
+                <button class="topbar-bell" type="button" data-notification-bell aria-label="Open notifications">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 19a2 2 0 004 0"/></svg>
+                    <span class="topbar-bell-count" data-notification-badge hidden>0</span>
+                </button>
+                <a class="topbar-link" href="/index.html">View site</a>
+            </div>
+        </header>
+
+        <main class="app-content" id="main">
+            <div class="app-alert" data-app-alert role="alert" hidden>
+                <span data-app-alert-text></span>
+            </div>
+
+            <section data-view="overview">
+                <div class="dash-hero">
+                    <div class="dash-hero-copy">
+                        <p class="eyebrow eyebrow-dark"><span class="eyebrow-line" aria-hidden="true"></span><span data-role-eyebrow>Brand workspace</span></p>
+                        <h2 data-greeting>Welcome to CollabNexus.</h2>
+                        <p data-hero-copy>Your account is ready. Complete your profile so brands and creators can evaluate a clear, trustworthy brief.</p>
+                        <div class="dash-hero-actions">
+                            <button class="button button-navy" type="button" data-goto-profile>Complete profile</button>
+                            <a class="button button-ghost" href="/index.html#platform">Explore the platform</a>
+                        </div>
+                    </div>
+                    <div class="completion-card">
+                        <div class="completion-ring" data-completion-ring style="--progress: 0">
+                            <span data-completion-value>0%</span>
+                        </div>
+                        <div class="completion-copy">
+                            <strong data-completion-title>Profile completeness</strong>
+                            <p data-completion-note>Add a few more details to build a complete profile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-grid" data-stat-grid></div>
+
+                <div class="dash-grid">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Account summary</h3>
+                                <p>Server-verified details from your session.</p>
+                            </div>
+                            <span class="badge badge-soft" data-role-badge>Account</span>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="detail-list" data-account-details></dl>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Readiness checklist</h3>
+                                <p>Items that make your profile useful to the other side of the marketplace.</p>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="check-list dash-checklist" data-checklist></ul>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="panel" data-admin-panel hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3>Recent accounts</h3>
+                            <p>Read-only account records for platform administration.</p>
+                        </div>
+                        <span class="badge badge-soft" data-admin-count>0 accounts</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Account</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Joined</th>
+                                </tr>
+                                </thead>
+                                <tbody data-admin-users></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel roadmap-panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Platform coverage</h3>
+                            <p>The final build ships every module below. Demonstration data is clearly labelled and never presented as a live offer.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ol class="roadmap compact-roadmap">
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Foundation</span><strong>Accounts and profiles</strong><p>Spring Boot, secure sessions, role-based access, brand and creator profiles.</p></div><span class="roadmap-state">Complete</span></li>
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Marketplace</span><strong>Discovery and campaigns</strong><p>Campaign lifecycle, public discovery, creator filtering, saved campaigns.</p></div><span class="roadmap-state">Complete</span></li>
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Collaboration</span><strong>Applications and contracts</strong><p>Proposals, shortlisting, acceptance, versioned contracts, deliverables, revisions.</p></div><span class="roadmap-state">Complete</span></li>
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Finance</span><strong>Payments and analytics</strong><p>Manual payment records, financial summaries, campaign metrics, and dashboards.</p></div><span class="roadmap-state">Complete</span></li>
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Governance</span><strong>Messaging, reviews, moderation</strong><p>Scoped conversations, notifications, eligible reviews, reports, and audit history.</p></div><span class="roadmap-state">Complete</span></li>
+                            <li class="roadmap-item is-complete"><span class="roadmap-marker" aria-hidden="true"></span><div><span class="roadmap-phase">Production</span><strong>Quality and deployment</strong><p>Automated tests, MySQL profile, Flyway migrations, Docker, and operations guidance.</p></div><span class="roadmap-state">Complete</span></li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="profile" hidden>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3 data-profile-title>My profile</h3>
+                            <p data-profile-subtitle>Keep this information accurate and easy to verify.</p>
+                        </div>
+                        <span class="badge badge-soft" data-profile-complete>0% complete</span>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form js-validate-form" data-profile-form data-form-type="profile" novalidate>
+                            <div data-profile-group="brand" hidden>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="companyName">Company name</label>
+                                        <div class="field-control"><input class="input" id="companyName" name="companyName" type="text" maxlength="160" required></div>
+                                        <p class="field-error" data-field-error>Enter your company name.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="contactName">Primary contact</label>
+                                        <div class="field-control"><input class="input" id="contactName" name="contactName" type="text" maxlength="120" required></div>
+                                        <p class="field-error" data-field-error>Enter the primary contact name.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="companyWebsite">Company website <span class="field-hint">(optional)</span></label>
+                                        <div class="field-control"><input class="input" id="companyWebsite" name="companyWebsite" type="url" maxlength="255" placeholder="https://example.com"></div>
+                                        <p class="field-error" data-field-error>Enter a full URL including https://.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="industry">Industry</label>
+                                        <div class="field-control">
+                                            <select class="select" id="industry" name="industry">
+                                                <option value="">Select an industry</option>
+                                                <option>Beauty &amp; Skincare</option>
+                                                <option>Fashion &amp; Lifestyle</option>
+                                                <option>Travel &amp; Hospitality</option>
+                                                <option>Technology &amp; Productivity</option>
+                                                <option>Fitness &amp; Wellness</option>
+                                                <option>Food &amp; Drink</option>
+                                                <option>Gaming &amp; Entertainment</option>
+                                                <option>Business &amp; Finance</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="country">Country</label>
+                                        <div class="field-control"><input class="input" id="country" name="country" type="text" maxlength="120" placeholder="United Kingdom"></div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="logoUrl">Logo URL <span class="field-hint">(optional)</span></label>
+                                        <div class="field-control"><input class="input" id="logoUrl" name="logoUrl" type="url" maxlength="500" placeholder="https://example.com/logo.png"></div>
+                                        <p class="field-error" data-field-error>Enter a full URL including https://.</p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="description">Company description</label>
+                                    <div class="field-control"><textarea class="input textarea" id="description" name="description" rows="5" maxlength="2000" placeholder="What you make, who you serve, and the kind of creator partnerships you value."></textarea></div>
+                                </div>
+                            </div>
+
+                            <div data-profile-group="creator" hidden>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="displayName">Creator name</label>
+                                        <div class="field-control"><input class="input" id="displayName" name="displayName" type="text" maxlength="120" required></div>
+                                        <p class="field-error" data-field-error>Enter your creator name.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="headline">Headline</label>
+                                        <div class="field-control"><input class="input" id="headline" name="headline" type="text" maxlength="160" placeholder="Beauty and skincare storyteller"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="niche">Primary niche</label>
+                                        <div class="field-control">
+                                            <select class="select" id="niche" name="niche" required>
+                                                <option value="">Select a niche</option>
+                                                <option>Beauty &amp; Skincare</option>
+                                                <option>Fashion &amp; Lifestyle</option>
+                                                <option>Travel &amp; Hospitality</option>
+                                                <option>Technology &amp; Productivity</option>
+                                                <option>Fitness &amp; Wellness</option>
+                                                <option>Food &amp; Drink</option>
+                                                <option>Gaming &amp; Entertainment</option>
+                                                <option>Business &amp; Finance</option>
+                                            </select>
+                                        </div>
+                                        <p class="field-error" data-field-error>Select your primary niche.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="primaryPlatform">Primary platform</label>
+                                        <div class="field-control">
+                                            <select class="select" id="primaryPlatform" name="primaryPlatform" required>
+                                                <option value="">Select a platform</option>
+                                                <option>Instagram</option>
+                                                <option>TikTok</option>
+                                                <option>YouTube</option>
+                                                <option>LinkedIn</option>
+                                                <option>X (Twitter)</option>
+                                                <option>Blog or newsletter</option>
+                                            </select>
+                                        </div>
+                                        <p class="field-error" data-field-error>Select your primary platform.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="creatorCountry">Country</label>
+                                        <div class="field-control"><input class="input" id="creatorCountry" name="creatorCountry" type="text" maxlength="120"></div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="languages">Languages</label>
+                                        <div class="field-control"><input class="input" id="languages" name="languages" type="text" maxlength="255" placeholder="English, Mandarin"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="baseRate">Indicative rate</label>
+                                        <div class="field-control"><input class="input" id="baseRate" name="baseRate" type="number" min="0" step="0.01" placeholder="1200.00"></div>
+                                        <p class="field-hint">A labelled starting point, not a guaranteed price.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="currency">Currency</label>
+                                        <div class="field-control">
+                                            <select class="select" id="currency" name="currency">
+                                                <option>USD</option><option>GBP</option><option>EUR</option><option>SGD</option>
+                                                <option>AED</option><option>INR</option><option>AUD</option><option>CAD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="availability">Availability</label>
+                                        <div class="field-control">
+                                            <select class="select" id="availability" name="availability">
+                                                <option value="AVAILABLE">Available</option>
+                                                <option value="LIMITED">Limited availability</option>
+                                                <option value="BOOKED">Booked</option>
+                                                <option value="UNAVAILABLE">Unavailable</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="contentFormats">Content formats</label>
+                                        <div class="field-control"><input class="input" id="contentFormats" name="contentFormats" type="text" maxlength="255" placeholder="Short-form video, Photo carousel"></div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="portfolioUrl">Portfolio URL <span class="field-hint">(optional)</span></label>
+                                    <div class="field-control"><input class="input" id="portfolioUrl" name="portfolioUrl" type="url" maxlength="500" placeholder="https://example.com/portfolio"></div>
+                                    <p class="field-error" data-field-error>Enter a full URL including https://.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="bio">Biography</label>
+                                    <div class="field-control"><textarea class="input textarea" id="bio" name="bio" rows="5" maxlength="2000" placeholder="Your story, your audience, and the work you love to make."></textarea></div>
+                                </div>
+                                <p class="fine-line">Verification status is managed by platform administrators. This profile does not claim verification or endorsement.</p>
+                            </div>
+
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-profile-submit>Save profile</button>
+                                <button class="button button-ghost" type="button" data-profile-reset>Reset changes</button>
+                            </div>
+                            <div class="form-alert" data-profile-alert role="status" hidden>
+                                <span data-profile-alert-text></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section data-view="campaigns" hidden>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Campaign workspace</h3>
+                            <p>Drafts stay private. Published campaigns appear in public discovery until you pause or close them.</p>
+                        </div>
+                        <button class="button button-navy button-sm" type="button" data-campaign-new>New campaign</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="campaignStatusFilter">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="campaignStatusFilter" data-campaign-status>
+                                        <option value="">All statuses</option>
+                                        <option value="DRAFT">Draft</option>
+                                        <option value="PUBLISHED">Published</option>
+                                        <option value="PAUSED">Paused</option>
+                                        <option value="CLOSED">Closed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="campaignSearch">Search</label>
+                                <div class="field-control">
+                                    <input class="input" id="campaignSearch" data-campaign-search type="search" placeholder="Campaign title">
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-campaign-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-campaign-alert role="alert" hidden>
+                            <span data-campaign-alert-text></span>
+                        </div>
+                        <div class="campaign-manager" data-campaign-list></div>
+                        <div class="marketplace-empty" data-campaign-empty hidden>
+                            <h3>No campaigns here yet.</h3>
+                            <p>Create a draft, add the brief and budget, then publish when the details are complete.</p>
+                        </div>
+                        <nav class="pagination" data-campaign-pagination aria-label="Campaign pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-campaign-prev>Previous</button>
+                            <span data-campaign-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-campaign-next>Next</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="panel" data-campaign-editor hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3 data-campaign-form-title>New campaign</h3>
+                            <p data-campaign-form-note>Campaigns start as a private draft. You can edit every detail before publishing.</p>
+                        </div>
+                        <span class="badge badge-soft" data-campaign-form-status>Draft</span>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form js-validate-form" data-campaign-form data-form-type="campaign" novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignTitle">Campaign title</label>
+                                    <div class="field-control"><input class="input" id="campaignTitle" name="title" type="text" maxlength="160" required></div>
+                                    <p class="field-error" data-field-error>Enter a campaign title.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignCategory">Category</label>
+                                    <div class="field-control"><input class="input" id="campaignCategory" name="category" type="text" maxlength="120" placeholder="Awareness"></div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="campaignDescription">Description and objectives</label>
+                                <div class="field-control"><textarea class="input textarea" id="campaignDescription" name="description" rows="4" maxlength="4000" required placeholder="What the campaign is, why it matters, and what success looks like."></textarea></div>
+                                <p class="field-error" data-field-error>Describe the campaign.</p>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignObjectives">Specific objectives <span class="field-hint">(optional)</span></label>
+                                    <div class="field-control"><textarea class="input textarea" id="campaignObjectives" name="objectives" rows="3" maxlength="2000"></textarea></div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignProduct">Product or service details <span class="field-hint">(optional)</span></label>
+                                    <div class="field-control"><textarea class="input textarea" id="campaignProduct" name="productDetails" rows="3" maxlength="2000"></textarea></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignAudience">Target audience <span class="field-hint">(optional)</span></label>
+                                    <div class="field-control"><input class="input" id="campaignAudience" name="targetAudience" type="text" maxlength="2000"></div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignNiches">Preferred niches</label>
+                                    <div class="field-control"><input class="input" id="campaignNiches" name="niches" type="text" maxlength="255" placeholder="Beauty & Skincare, Travel"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignPlatforms">Required platforms</label>
+                                    <div class="field-control"><input class="input" id="campaignPlatforms" name="platforms" type="text" maxlength="255" placeholder="Instagram, TikTok"></div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignFormats">Content formats</label>
+                                    <div class="field-control"><input class="input" id="campaignFormats" name="contentFormats" type="text" maxlength="255" placeholder="Short-form video, Photo carousel"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignStart">Campaign start</label>
+                                    <div class="field-control"><input class="input" id="campaignStart" name="startDate" type="date" required></div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignEnd">Campaign end</label>
+                                    <div class="field-control"><input class="input" id="campaignEnd" name="endDate" type="date" required></div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignDeadline">Application deadline</label>
+                                    <div class="field-control"><input class="input" id="campaignDeadline" name="applicationDeadline" type="date" required></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignMinBudget">Minimum budget</label>
+                                    <div class="field-control"><input class="input" id="campaignMinBudget" name="minBudget" type="number" min="0" step="0.01" required></div>
+                                    <p class="field-error" data-field-error>Enter a budget of zero or more.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignMaxBudget">Maximum budget</label>
+                                    <div class="field-control"><input class="input" id="campaignMaxBudget" name="maxBudget" type="number" min="0" step="0.01" required></div>
+                                    <p class="field-error" data-field-error>Enter a budget of zero or more.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignCurrency">Currency</label>
+                                    <div class="field-control">
+                                        <select class="select" id="campaignCurrency" name="currency">
+                                            <option>USD</option><option>GBP</option><option>EUR</option><option>SGD</option>
+                                            <option>AED</option><option>INR</option><option>AUD</option><option>CAD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="campaignCompensation">Compensation model</label>
+                                    <div class="field-control">
+                                        <select class="select" id="campaignCompensation" name="compensationModel" required>
+                                            <option value="FIXED_FEE">Fixed fee</option>
+                                            <option value="PER_DELIVERABLE">Per deliverable</option>
+                                            <option value="HYBRID">Hybrid</option>
+                                            <option value="AFFILIATE">Affiliate</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="campaignCreators">Creators required</label>
+                                    <div class="field-control"><input class="input" id="campaignCreators" name="creatorsRequired" type="number" min="1" max="100" step="1" value="1" required></div>
+                                    <p class="field-error" data-field-error>Choose between 1 and 100 creators.</p>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="campaignDeliverables">Deliverable requirements</label>
+                                <div class="field-control"><textarea class="input textarea" id="campaignDeliverables" name="deliverableRequirements" rows="3" maxlength="2000" placeholder="What each creator must submit, including formats and usage notes."></textarea></div>
+                            </div>
+                            <div class="field">
+                                <label for="campaignReviewRules">Review and approval rules <span class="field-hint">(optional)</span></label>
+                                <div class="field-control"><textarea class="input textarea" id="campaignReviewRules" name="reviewRules" rows="2" maxlength="2000" placeholder="Revision allowance, approval window, and final sign-off."></textarea></div>
+                            </div>
+                            <div class="form-alert" data-campaign-form-alert role="status" hidden>
+                                <span data-campaign-form-alert-text></span>
+                            </div>
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-campaign-save>Save draft</button>
+                                <button class="button button-ghost" type="button" data-campaign-cancel>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section data-view="applications" hidden>
+                <div class="panel" data-brand-applications-panel hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3>Application review</h3>
+                            <p>Read every proposal, shortlist the strongest creators, and accept only within the campaign capacity.</p>
+                        </div>
+                        <span class="badge badge-soft" data-brand-app-count>0 applications</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="brandApplicationStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="brandApplicationStatus" data-brand-app-status>
+                                        <option value="">All statuses</option>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="SHORTLISTED">Shortlisted</option>
+                                        <option value="ACCEPTED">Accepted</option>
+                                        <option value="REJECTED">Rejected</option>
+                                        <option value="WITHDRAWN">Withdrawn</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="brandApplicationSearch">Search</label>
+                                <div class="field-control">
+                                    <input class="input" id="brandApplicationSearch" data-brand-app-search type="search" placeholder="Creator, campaign, or proposal">
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-brand-app-refresh>Refresh</button>
+                        </div>
+                        <div class="filter-chip-row" data-brand-app-campaign-filter hidden>
+                            <span class="filter-chip">Campaign: <strong data-brand-app-campaign-title></strong></span>
+                            <button class="button button-ghost button-sm" type="button" data-brand-app-clear-campaign>Show every campaign</button>
+                        </div>
+                        <div class="app-alert" data-brand-app-alert role="alert" hidden>
+                            <span data-brand-app-alert-text></span>
+                        </div>
+                        <div class="application-list" data-brand-app-list></div>
+                        <div class="marketplace-empty" data-brand-app-empty hidden>
+                            <h3>No applications match these filters.</h3>
+                            <p>Applications appear here as soon as creators submit proposals to your published campaigns.</p>
+                        </div>
+                        <nav class="pagination" data-brand-app-pagination aria-label="Application pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-brand-app-prev>Previous</button>
+                            <span data-brand-app-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-brand-app-next>Next</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="panel" data-creator-applications-panel hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3>My applications</h3>
+                            <p>Track every proposal. You can withdraw while an application is pending or shortlisted and before the deadline.</p>
+                        </div>
+                        <span class="badge badge-soft" data-creator-app-count>0 applications</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="creatorApplicationStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="creatorApplicationStatus" data-creator-app-status>
+                                        <option value="">All statuses</option>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="SHORTLISTED">Shortlisted</option>
+                                        <option value="ACCEPTED">Accepted</option>
+                                        <option value="REJECTED">Rejected</option>
+                                        <option value="WITHDRAWN">Withdrawn</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="creatorApplicationSearch">Search</label>
+                                <div class="field-control">
+                                    <input class="input" id="creatorApplicationSearch" data-creator-app-search type="search" placeholder="Campaign, brand, or proposal">
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-creator-app-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-creator-app-alert role="alert" hidden>
+                            <span data-creator-app-alert-text></span>
+                        </div>
+                        <div class="application-list" data-creator-app-list></div>
+                        <div class="marketplace-empty" data-creator-app-empty hidden>
+                            <h3>No applications yet.</h3>
+                            <p>Browse published campaigns and submit a proposal with your price, availability, and portfolio.</p>
+                            <a class="button button-navy" href="/campaigns.html">Discover campaigns</a>
+                        </div>
+                        <nav class="pagination" data-creator-app-pagination aria-label="Application pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-creator-app-prev>Previous</button>
+                            <span data-creator-app-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-creator-app-next>Next</button>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <section data-view="collaborations" hidden>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Collaborations</h3>
+                            <p>An accepted application becomes a collaboration. Track contract status, deliverables, and deadline progress here.</p>
+                        </div>
+                        <span class="badge badge-soft" data-collab-count>0 collaborations</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="collaborationStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="collaborationStatus" data-collab-status>
+                                        <option value="">All statuses</option>
+                                        <option value="ACTIVE">Active</option>
+                                        <option value="IN_PROGRESS">In progress</option>
+                                        <option value="COMPLETED">Completed</option>
+                                        <option value="CANCELLED">Cancelled</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-collab-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-collab-alert role="alert" hidden>
+                            <span data-collab-alert-text></span>
+                        </div>
+                        <div class="collaboration-list" data-collab-list></div>
+                        <div class="marketplace-empty" data-collab-empty hidden>
+                            <h3>No collaborations yet.</h3>
+                            <p>A collaboration is created automatically when a brand accepts a creator application.</p>
+                        </div>
+                        <nav class="pagination" data-collab-pagination aria-label="Collaboration pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-collab-prev>Previous</button>
+                            <span data-collab-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-collab-next>Next</button>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <section data-view="deliverables" hidden>
+                <div class="dash-grid">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Upcoming deadlines</h3>
+                                <p>Open work due in the next 30 days.</p>
+                            </div>
+                            <span class="badge badge-soft" data-deliverable-upcoming-count>0</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="deadline-list" data-deliverable-upcoming></div>
+                        </div>
+                    </section>
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Overdue deliverables</h3>
+                                <p>Deadlines that have passed and still need attention.</p>
+                            </div>
+                            <span class="badge badge-danger" data-deliverable-overdue-count>0</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="deadline-list" data-deliverable-overdue></div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="panel" data-deliverable-editor hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3 data-deliverable-form-title>New deliverable</h3>
+                            <p>Define what the creator must produce, where it is published, and when it is due.</p>
+                        </div>
+                        <span class="badge badge-soft" data-deliverable-form-mode>Pending</span>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form js-validate-form" data-deliverable-form
+                              data-form-type="deliverable" novalidate>
+                            <input type="hidden" data-deliverable-id>
+                            <div class="field" data-deliverable-collaboration-field>
+                                <label for="deliverableCollaboration">Collaboration</label>
+                                <div class="field-control">
+                                    <select class="select" id="deliverableCollaboration"
+                                            name="collaborationId" data-deliverable-collaboration required></select>
+                                </div>
+                                <p class="field-error" data-field-error>Choose a collaboration.</p>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="deliverableTitle">Deliverable title</label>
+                                    <div class="field-control">
+                                        <input class="input" id="deliverableTitle" name="title" type="text"
+                                               maxlength="160" required placeholder="Launch reel">
+                                    </div>
+                                    <p class="field-error" data-field-error>Enter a deliverable title.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="deliverableDueDate">Due date</label>
+                                    <div class="field-control">
+                                        <input class="input" id="deliverableDueDate" name="dueDate"
+                                               type="date" required>
+                                    </div>
+                                    <p class="field-error" data-field-error>Choose a due date.</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="deliverablePlatform">Required platform</label>
+                                    <div class="field-control">
+                                        <input class="input" id="deliverablePlatform" name="platform"
+                                               type="text" maxlength="80" placeholder="Instagram">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="deliverableFormat">Content format</label>
+                                    <div class="field-control">
+                                        <input class="input" id="deliverableFormat" name="contentFormat"
+                                               type="text" maxlength="80" placeholder="Short-form video">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="deliverableDescription">Description and acceptance criteria</label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="deliverableDescription"
+                                              name="description" rows="3" maxlength="2000"
+                                              placeholder="What must be delivered, aspect ratio, captions, tagging, and approval rules."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-alert" data-deliverable-form-alert role="status" hidden>
+                                <span data-deliverable-form-alert-text></span>
+                            </div>
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-deliverable-save>Add deliverable</button>
+                                <button class="button button-ghost" type="button" data-deliverable-cancel>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="panel" data-submission-editor hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3 data-submission-title>Submit deliverable</h3>
+                            <p>Provide a submission link, a supporting file, or both. The brand sees every version.</p>
+                        </div>
+                        <span class="badge badge-soft" data-submission-mode>New version</span>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form" data-submission-form novalidate>
+                            <div class="field">
+                                <label for="submissionUrl">Submission URL <span class="field-hint">(optional)</span></label>
+                                <div class="field-control">
+                                    <input class="input" id="submissionUrl" name="submissionUrl"
+                                           type="url" maxlength="500" placeholder="https://example.com/published-work">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="submissionNotes">Submission notes <span class="field-hint">(optional)</span></label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="submissionNotes" name="submissionNotes"
+                                              rows="3" maxlength="2000"
+                                              placeholder="What changed in this version, and anything the brand should review."></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="submissionFile">Supporting file <span class="field-hint">(optional, 10 MB maximum)</span></label>
+                                <div class="field-control">
+                                    <input class="input" id="submissionFile" name="file" type="file"
+                                           accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,.txt,.csv,.zip">
+                                </div>
+                                <p class="fine-line">PDF, PNG, JPG, WEBP, GIF, TXT, CSV, or ZIP. Executable files are rejected by the server.</p>
+                            </div>
+                            <div class="form-alert" data-submission-alert role="status" hidden>
+                                <span data-submission-alert-text></span>
+                            </div>
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-submission-save>Submit for review</button>
+                                <button class="button button-ghost" type="button" data-submission-cancel>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Deliverable tracker</h3>
+                            <p>Submission history, revision requests, approvals, and deadlines in one place.</p>
+                        </div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-deliverable-count>0 deliverables</span>
+                            <button class="button button-navy button-sm" type="button" data-deliverable-new hidden>Add deliverable</button>
+                            <button class="button button-ghost button-sm" type="button" data-deliverable-refresh>Refresh</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="deliverableStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="deliverableStatus" data-deliverable-status>
+                                        <option value="">All statuses</option>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="IN_PROGRESS">In progress</option>
+                                        <option value="SUBMITTED">Submitted</option>
+                                        <option value="REVISION_REQUESTED">Revision requested</option>
+                                        <option value="APPROVED">Approved</option>
+                                        <option value="REJECTED">Rejected</option>
+                                        <option value="OVERDUE">Overdue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="deliverableDeadline">Deadline</label>
+                                <div class="field-control">
+                                    <select class="select" id="deliverableDeadline" data-deliverable-deadline>
+                                        <option value="">All deadlines</option>
+                                        <option value="upcoming">Upcoming (30 days)</option>
+                                        <option value="overdue">Overdue</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-chip-row" data-deliverable-collab-filter hidden>
+                            <span class="filter-chip">Collaboration: <strong data-deliverable-collab-title></strong></span>
+                            <button class="button button-ghost button-sm" type="button"
+                                    data-deliverable-clear-collab>Show every collaboration</button>
+                        </div>
+                        <div class="app-alert" data-deliverable-alert role="alert" hidden>
+                            <span data-deliverable-alert-text></span>
+                        </div>
+                        <div class="deliverable-list" data-deliverable-list></div>
+                        <div class="marketplace-empty" data-deliverable-empty hidden>
+                            <h3>No deliverables match these filters.</h3>
+                            <p>Deliverables appear here when a brand defines work for an accepted collaboration.</p>
+                        </div>
+                        <nav class="pagination" data-deliverable-pagination aria-label="Deliverable pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-deliverable-prev>Previous</button>
+                            <span data-deliverable-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-deliverable-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="contracts" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Contracts</h3>
+                            <p>Versioned terms, acknowledgement records, and a printable summary. A checkbox is not a legally binding signature.</p>
+                        </div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-contract-count>0 contracts</span>
+                            <button class="button button-ghost button-sm" type="button" data-contract-refresh>Refresh</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="app-alert" data-contract-alert role="alert" hidden>
+                            <span data-contract-alert-text></span>
+                        </div>
+                        <div class="contract-list" data-contract-list></div>
+                        <div class="marketplace-empty" data-contract-empty hidden>
+                            <h3>No contracts yet.</h3>
+                            <p>A contract is created automatically when a brand accepts an application.</p>
+                        </div>
+                        <nav class="pagination" data-contract-pagination aria-label="Contract pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-contract-prev>Previous</button>
+                            <span data-contract-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-contract-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+
+                <section class="panel" data-contract-detail hidden>
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Contract summary</p>
+                            <h3 data-contract-reference>Contract</h3>
+                            <p data-contract-campaign></p>
+                        </div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-contract-status>Draft</span>
+                            <button class="button button-ghost button-sm" type="button" data-contract-print>Print summary</button>
+                        </div>
+                    </div>
+                    <div class="panel-body contract-detail-body">
+                        <dl class="detail-list" data-contract-facts></dl>
+                        <div class="contract-terms-grid" data-contract-terms></div>
+                        <div class="contract-ack" data-contract-ack></div>
+                        <div class="application-actions" data-contract-actions></div>
+                        <div class="contract-history" data-contract-history></div>
+                        <p class="fine-line">This printable summary records acknowledgement events. It is not a claim of legal electronic signature and does not transfer money.</p>
+                    </div>
+                </section>
+
+                <section class="panel" data-contract-editor hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3>Edit contract terms</h3>
+                            <p>Saving creates a new version, resets both acknowledgements, and returns the contract to draft.</p>
+                        </div>
+                        <span class="badge badge-soft" data-contract-editor-version>Version 1</span>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form" data-contract-form novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="contractAmount">Agreed compensation</label>
+                                    <div class="field-control">
+                                        <input class="input" id="contractAmount" name="agreedCompensation"
+                                               type="number" min="0" step="0.01" required>
+                                    </div>
+                                    <p class="field-error" data-field-error>Enter the agreed compensation.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="contractCurrency">Currency</label>
+                                    <div class="field-control">
+                                        <input class="input" id="contractCurrency" name="currency"
+                                               type="text" maxlength="3" required placeholder="USD">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="contractDeadline">Completion deadline</label>
+                                    <div class="field-control">
+                                        <input class="input" id="contractDeadline" name="completionDeadline"
+                                               type="date">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="contractRevisions">Revision allowance</label>
+                                    <div class="field-control">
+                                        <input class="input" id="contractRevisions" name="revisionAllowance"
+                                               type="number" min="0" max="20" step="1" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contractDeliverables">Deliverables and deadlines</label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="contractDeliverables"
+                                              name="deliverablesSummary" rows="3" maxlength="4000"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contractUsage">Usage rights and licensing</label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="contractUsage"
+                                              name="usageRights" rows="3" maxlength="4000"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contractCancellation">Cancellation terms</label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="contractCancellation"
+                                              name="cancellationTerms" rows="3" maxlength="4000"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contractPayment">Payment schedule</label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="contractPayment"
+                                              name="paymentSchedule" rows="3" maxlength="4000"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-alert" data-contract-form-alert role="status" hidden>
+                                <span data-contract-form-alert-text></span>
+                            </div>
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-contract-save>Save new version</button>
+                                <button class="button button-ghost" type="button" data-contract-cancel>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="payments" hidden>
+                <div class="stat-grid" data-payment-summary></div>
+
+                <section class="panel" data-payment-create hidden>
+                    <div class="panel-head">
+                        <div>
+                            <h3>Record a payment milestone</h3>
+                            <p>Milestones are records inside CollabNexus. No money is transferred and no card data is stored.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form" data-payment-form novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="paymentCollaboration">Collaboration</label>
+                                    <div class="field-control">
+                                        <select class="select" id="paymentCollaboration" name="collaborationId" required></select>
+                                    </div>
+                                    <p class="field-error" data-field-error>Choose a collaboration.</p>
+                                </div>
+                                <div class="field">
+                                    <label for="paymentMilestone">Milestone</label>
+                                    <div class="field-control">
+                                        <input class="input" id="paymentMilestone" name="milestone" type="text" maxlength="120" required placeholder="Deposit (50%)">
+                                    </div>
+                                    <p class="field-error" data-field-error>Describe the milestone.</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="paymentAmount">Amount</label>
+                                    <div class="field-control">
+                                        <input class="input" id="paymentAmount" name="amount" type="number" min="0.01" step="0.01" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="paymentCurrency">Currency</label>
+                                    <div class="field-control">
+                                        <select class="select" id="paymentCurrency" name="currency">
+                                            <option>USD</option><option>GBP</option><option>EUR</option><option>SGD</option>
+                                            <option>AED</option><option>INR</option><option>AUD</option><option>CAD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="paymentDueDate">Due date</label>
+                                    <div class="field-control">
+                                        <input class="input" id="paymentDueDate" name="dueDate" type="date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="paymentNotes">Notes <span class="field-hint">(optional)</span></label>
+                                <div class="field-control">
+                                    <textarea class="input textarea" id="paymentNotes" name="notes" rows="2" maxlength="2000" placeholder="Payment method agreed outside the platform, invoice reference, or reminder."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-alert" data-payment-alert role="status" hidden><span data-payment-alert-text></span></div>
+                            <div class="form-actions dash-form-actions">
+                                <button class="button button-navy" type="submit" data-payment-save>Add milestone</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Payment records</h3>
+                            <p>Recorded status only. A verified external payment is never implied.</p>
+                        </div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-payment-count>0 records</span>
+                            <button class="button button-ghost button-sm" type="button" data-payment-refresh>Refresh</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="paymentStatusFilter">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="paymentStatusFilter" data-payment-status>
+                                        <option value="">All statuses</option>
+                                        <option value="NOT_DUE">Not due</option>
+                                        <option value="DUE">Due</option>
+                                        <option value="PROCESSING">Processing</option>
+                                        <option value="PAID">Paid</option>
+                                        <option value="FAILED">Failed</option>
+                                        <option value="REFUNDED">Refunded</option>
+                                        <option value="DISPUTED">Disputed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="paymentSearch">Search</label>
+                                <div class="field-control">
+                                    <input class="input" id="paymentSearch" type="search" data-payment-search placeholder="Milestone, campaign, or counterpart">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app-alert" data-payment-list-alert role="alert" hidden><span data-payment-list-alert-text></span></div>
+                        <div class="payment-list" data-payment-list></div>
+                        <div class="marketplace-empty" data-payment-empty hidden>
+                            <h3>No payment records yet.</h3>
+                            <p>Milestones appear here when a brand records them against an accepted collaboration.</p>
+                        </div>
+                        <nav class="pagination" data-payment-pagination aria-label="Payment pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-payment-prev>Previous</button>
+                            <span data-payment-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-payment-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="analytics" hidden>
+                <div class="stat-grid" data-analytics-stats></div>
+
+                <div class="chart-grid">
+                    <section class="panel chart-panel">
+                        <div class="panel-head">
+                            <div><h3>Applications over time</h3><p>Applications created in the last six months (UTC).</p></div>
+                        </div>
+                        <div class="panel-body"><canvas data-chart="applications" height="220" aria-label="Applications over time chart" role="img"></canvas></div>
+                    </section>
+                    <section class="panel chart-panel">
+                        <div class="panel-head">
+                            <div><h3>Application funnel</h3><p>Every application grouped by its current status.</p></div>
+                        </div>
+                        <div class="panel-body"><canvas data-chart="funnel" height="220" aria-label="Application funnel chart" role="img"></canvas></div>
+                    </section>
+                    <section class="panel chart-panel">
+                        <div class="panel-head">
+                            <div><h3>Monthly collaborations</h3><p>Collaboration records created in the last six months.</p></div>
+                        </div>
+                        <div class="panel-body"><canvas data-chart="collaborations" height="220" aria-label="Monthly collaborations chart" role="img"></canvas></div>
+                    </section>
+                    <section class="panel chart-panel">
+                        <div class="panel-head">
+                            <div><h3>Budget and recorded spending</h3><p>Planned budget is the sum of campaign maximum budgets. Spending is recorded, not externally verified.</p></div>
+                        </div>
+                        <div class="panel-body"><canvas data-chart="budget" height="220" aria-label="Budget and spending chart" role="img"></canvas></div>
+                    </section>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-head"><div><h3>Metric definitions</h3><p>No reach, impressions, clicks, conversions, or return on ad spend are invented.</p></div></div>
+                    <div class="panel-body">
+                        <dl class="detail-list">
+                            <div class="detail-row"><dt>Response rate</dt><dd>Accepted applications divided by applications that have a final decision (accepted or rejected).</dd></div>
+                            <div class="detail-row"><dt>Recorded earnings</dt><dd>Sum of payment records marked paid. This is a database record, not proof of an external transfer.</dd></div>
+                            <div class="detail-row"><dt>Deliverable completion</dt><dd>Approved deliverables divided by every deliverable in your collaborations.</dd></div>
+                            <div class="detail-row"><dt>Planned budget</dt><dd>Sum of the maximum budget across your campaigns.</dd></div>
+                        </dl>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="messages" hidden>
+                <div class="message-layout">
+                    <section class="panel message-sidebar">
+                        <div class="panel-head">
+                            <div><h3>Conversations</h3><p>Only you and the other collaboration participant can read these messages.</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="app-alert" data-conversation-alert role="alert" hidden><span data-conversation-alert-text></span></div>
+                            <div class="conversation-list" data-conversation-list></div>
+                            <div class="marketplace-empty compact-empty" data-conversation-empty hidden>
+                                <h3>No conversations yet.</h3>
+                                <p>Open a collaboration to start a conversation with the other party.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel message-thread">
+                        <div class="panel-head">
+                            <div>
+                                <h3 data-thread-title>Select a conversation</h3>
+                                <p data-thread-subtitle>Messages stay attached to the collaboration.</p>
+                            </div>
+                            <span class="badge badge-soft" data-thread-unread hidden></span>
+                        </div>
+                        <div class="panel-body message-thread-body">
+                            <div class="message-list" data-message-list>
+                                <p class="fine-line">Choose a conversation to read its messages.</p>
+                            </div>
+                            <form class="message-composer" data-message-form hidden novalidate>
+                                <label class="sr-only" for="messageBody">Message</label>
+                                <textarea class="input textarea" id="messageBody" name="body" rows="2" maxlength="2000" required placeholder="Write a clear, professional message..."></textarea>
+                                <button class="button button-navy" type="submit" data-message-send>Send</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section data-view="reviews" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Eligible collaborations</h3>
+                            <p>Reviews open only after a collaboration is completed. Each party may review once.</p>
+                        </div>
+                        <span class="badge badge-soft" data-review-eligible-count>0 available</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="app-alert" data-review-alert role="alert" hidden><span data-review-alert-text></span></div>
+                        <div class="review-eligible-list" data-review-eligible></div>
+                        <div class="marketplace-empty" data-review-eligible-empty hidden>
+                            <h3>No collaborations awaiting a review.</h3>
+                            <p>When a collaboration is marked complete, the review form appears here.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dash-grid">
+                    <section class="panel">
+                        <div class="panel-head"><div><h3>Your reviews</h3><p>Written by you about your collaboration partners.</p></div></div>
+                        <div class="panel-body"><div class="review-list" data-review-mine></div></div>
+                    </section>
+                    <section class="panel">
+                        <div class="panel-head"><div><h3>Reviews about you</h3><p>Only published reviews are shown.</p></div><span class="badge badge-soft" data-review-average>No rating</span></div>
+                        <div class="panel-body"><div class="review-list" data-review-received></div></div>
+                    </section>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Report misuse</h3><p>Report suspicious profiles, misleading campaigns, abusive messages, or potential scams.</p></div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form dash-form" data-report-form novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="reportTargetType">What are you reporting?</label>
+                                    <div class="field-control">
+                                        <select class="select" id="reportTargetType" name="targetType" required>
+                                            <option value="USER">User or profile</option>
+                                            <option value="CAMPAIGN">Campaign</option>
+                                            <option value="MESSAGE">Message</option>
+                                            <option value="REVIEW">Review</option>
+                                            <option value="OTHER">Something else</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="reportTargetId">Related record ID <span class="field-hint">(optional)</span></label>
+                                    <div class="field-control"><input class="input" id="reportTargetId" name="targetId" type="number" min="1" step="1"></div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="reportReason">Reason</label>
+                                <div class="field-control"><input class="input" id="reportReason" name="reason" type="text" maxlength="120" required placeholder="Misleading campaign brief"></div>
+                            </div>
+                            <div class="field">
+                                <label for="reportDetails">Details</label>
+                                <div class="field-control"><textarea class="input textarea" id="reportDetails" name="details" rows="3" maxlength="2000" placeholder="What happened, and what should an administrator review?"></textarea></div>
+                            </div>
+                            <div class="form-alert" data-report-alert role="status" hidden><span data-report-alert-text></span></div>
+                            <div class="form-actions dash-form-actions"><button class="button button-navy" type="submit">Submit report</button></div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="notifications" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Notifications</h3><p>Database-backed in-app notifications for your account.</p></div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-notification-count>0 unread</span>
+                            <button class="button button-ghost button-sm" type="button" data-notification-read-all>Mark all read</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="app-alert" data-notification-alert role="alert" hidden><span data-notification-alert-text></span></div>
+                        <div class="notification-list" data-notification-list></div>
+                        <div class="marketplace-empty" data-notification-empty hidden>
+                            <h3>No notifications yet.</h3>
+                            <p>Campaign, collaboration, contract, deliverable, message, and payment updates appear here.</p>
+                        </div>
+                        <nav class="pagination" data-notification-pagination aria-label="Notification pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-notification-prev>Previous</button>
+                            <span data-notification-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-notification-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="admin-users" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>User accounts</h3><p>Server-side role checks protect every administrative action. Suspension is recorded in the audit log.</p></div>
+                        <span class="badge badge-soft" data-admin-user-count>0 accounts</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="adminUserRole">Role</label>
+                                <div class="field-control">
+                                    <select class="select" id="adminUserRole" data-admin-user-role>
+                                        <option value="">All roles</option>
+                                        <option value="BRAND">Brand</option>
+                                        <option value="CREATOR">Creator</option>
+                                        <option value="ADMIN">Administrator</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="adminUserSearch">Search</label>
+                                <div class="field-control"><input class="input" id="adminUserSearch" type="search" data-admin-user-search placeholder="Name or email"></div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-admin-user-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-admin-user-alert role="alert" hidden><span data-admin-user-alert-text></span></div>
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead><tr><th scope="col">Account</th><th scope="col">Role</th><th scope="col">Status</th><th scope="col">Joined</th><th scope="col">Actions</th></tr></thead>
+                                <tbody data-admin-user-list></tbody>
+                            </table>
+                        </div>
+                        <nav class="pagination" data-admin-user-pagination aria-label="User pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-admin-user-prev>Previous</button>
+                            <span data-admin-user-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-user-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="admin-campaigns" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Campaign oversight</h3><p>Review every campaign record and close campaigns that break platform rules. Administrative closures are recorded in the audit log.</p></div>
+                        <span class="badge badge-soft" data-admin-campaign-count>0 campaigns</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="adminCampaignStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="adminCampaignStatus" data-admin-campaign-status>
+                                        <option value="">All statuses</option>
+                                        <option value="DRAFT">Draft</option>
+                                        <option value="PUBLISHED">Published</option>
+                                        <option value="PAUSED">Paused</option>
+                                        <option value="CLOSED">Closed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field campaign-search">
+                                <label for="adminCampaignSearch">Search</label>
+                                <div class="field-control"><input class="input" id="adminCampaignSearch" type="search" data-admin-campaign-search placeholder="Campaign or brand"></div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-admin-campaign-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-admin-campaign-alert role="alert" hidden><span data-admin-campaign-alert-text></span></div>
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead><tr><th scope="col">Campaign</th><th scope="col">Brand</th><th scope="col">Status</th><th scope="col">Budget</th><th scope="col">Deadline</th><th scope="col">Actions</th></tr></thead>
+                                <tbody data-admin-campaign-list></tbody>
+                            </table>
+                        </div>
+                        <div class="marketplace-empty" data-admin-campaign-empty hidden><h3>No campaigns match this filter.</h3></div>
+                        <nav class="pagination" data-admin-campaign-pagination aria-label="Campaign pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-admin-campaign-prev>Previous</button>
+                            <span data-admin-campaign-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-campaign-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="admin-reports" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Reports and disputes</h3><p>Resolve or dismiss with a recorded note. Every action is written to the audit log.</p></div>
+                        <span class="badge badge-soft" data-admin-report-count>0 reports</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="adminReportStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="adminReportStatus" data-admin-report-status>
+                                        <option value="">All statuses</option>
+                                        <option value="OPEN">Open</option>
+                                        <option value="UNDER_REVIEW">Under review</option>
+                                        <option value="RESOLVED">Resolved</option>
+                                        <option value="DISMISSED">Dismissed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-admin-report-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-admin-report-alert role="alert" hidden><span data-admin-report-alert-text></span></div>
+                        <div class="report-list" data-admin-report-list></div>
+                        <div class="marketplace-empty" data-admin-report-empty hidden>
+                            <h3>No reports match this filter.</h3>
+                            <p>User reports appear here for moderation.</p>
+                        </div>
+                        <nav class="pagination" data-admin-report-pagination aria-label="Report pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-admin-report-prev>Previous</button>
+                            <span data-admin-report-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-report-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="admin-reviews" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Review moderation</h3><p>Published reviews appear on public creator profiles. Hide reviews that break platform rules.</p></div>
+                        <span class="badge badge-soft" data-admin-review-count>0 reviews</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="campaign-toolbar">
+                            <div class="field">
+                                <label for="adminReviewStatus">Status</label>
+                                <div class="field-control">
+                                    <select class="select" id="adminReviewStatus" data-admin-review-status>
+                                        <option value="">All statuses</option>
+                                        <option value="PUBLISHED">Published</option>
+                                        <option value="UNDER_REVIEW">Under review</option>
+                                        <option value="HIDDEN">Hidden</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="button button-ghost button-sm" type="button" data-admin-review-refresh>Refresh</button>
+                        </div>
+                        <div class="app-alert" data-admin-review-alert role="alert" hidden><span data-admin-review-alert-text></span></div>
+                        <div class="review-list" data-admin-review-list></div>
+                        <div class="marketplace-empty" data-admin-review-empty hidden><h3>No reviews match this filter.</h3></div>
+                        <nav class="pagination" data-admin-review-pagination aria-label="Review pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-admin-review-prev>Previous</button>
+                            <span data-admin-review-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-review-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="admin-catalog" hidden>
+                <div class="dash-grid">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div><h3>Campaign categories</h3><p>Categories power campaign discovery filters and the campaign brief form. Deactivate an entry instead of removing it so historical campaigns stay readable.</p></div>
+                            <span class="badge badge-soft" data-admin-category-count>0 categories</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="app-alert" data-admin-category-alert role="alert" hidden><span data-admin-category-alert-text></span></div>
+                            <form class="form dash-form" data-category-form novalidate>
+                                <input type="hidden" data-category-id>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="categoryName">Category name</label>
+                                        <div class="field-control"><input class="input" id="categoryName" data-category-name type="text" maxlength="80" required placeholder="Beauty &amp; Skincare"></div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="categorySlug">Slug</label>
+                                        <div class="field-control"><input class="input" id="categorySlug" data-category-slug type="text" maxlength="80" placeholder="Generated from the name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="field">
+                                        <label for="categoryDescription">Description</label>
+                                        <div class="field-control"><input class="input" id="categoryDescription" data-category-description type="text" maxlength="500" placeholder="What this category covers"></div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="categorySortOrder">Sort order</label>
+                                        <div class="field-control"><input class="input" id="categorySortOrder" data-category-sort-order type="number" min="0" max="10000" step="1" value="100"></div>
+                                    </div>
+                                </div>
+                                <label class="checkbox"><input type="checkbox" data-category-active checked> Active in campaign filters</label>
+                                <div class="form-actions">
+                                    <button class="button button-navy" type="submit" data-category-save>Add category</button>
+                                    <button class="button button-ghost" type="button" data-category-reset>Clear</button>
+                                </div>
+                            </form>
+                            <div class="table-wrap">
+                                <table class="data-table">
+                                    <thead><tr><th scope="col">Category</th><th scope="col">Slug</th><th scope="col">Status</th><th scope="col">Order</th><th scope="col">Actions</th></tr></thead>
+                                    <tbody data-admin-category-list></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div><h3>Platform settings</h3><p>Operational switches applied by the server. Every change is recorded in the audit log.</p></div>
+                            <span class="badge badge-soft">Admin only</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="app-alert" data-admin-settings-alert role="alert" hidden><span data-admin-settings-alert-text></span></div>
+                            <form class="form dash-form" data-settings-form novalidate>
+                                <div data-admin-settings-list></div>
+                                <div class="form-actions">
+                                    <button class="button button-navy" type="submit" data-settings-save>Save settings</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section data-view="admin-audit" hidden>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Audit log</h3><p>Administrative and moderation actions with actor, target, and timestamp.</p></div>
+                        <div class="panel-actions">
+                            <span class="badge badge-soft" data-admin-audit-count>0 entries</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-audit-refresh>Refresh</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="app-alert" data-admin-audit-alert role="alert" hidden><span data-admin-audit-alert-text></span></div>
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead><tr><th scope="col">When</th><th scope="col">Actor</th><th scope="col">Action</th><th scope="col">Target</th><th scope="col">Details</th></tr></thead>
+                                <tbody data-admin-audit-list></tbody>
+                            </table>
+                        </div>
+                        <nav class="pagination" data-admin-audit-pagination aria-label="Audit pages" hidden>
+                            <button class="button button-ghost button-sm" type="button" data-admin-audit-prev>Previous</button>
+                            <span data-admin-audit-page>Page 1 of 1</span>
+                            <button class="button button-ghost button-sm" type="button" data-admin-audit-next>Next</button>
+                        </nav>
+                    </div>
+                </section>
+            </section>
+
+            <section data-view="security" hidden>
+                <div class="dash-grid">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div><h3>Account security</h3><p>How this session is protected.</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="detail-list" data-security-details></dl>
+                        </div>
+                    </section>
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div><h3>Session controls</h3><p>End this browser session immediately.</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <p class="panel-copy">Signing out invalidates the server-side session and clears the security context. No password or role value is ever stored in browser storage.</p>
+                            <button class="button button-navy" type="button" data-logout>Sign out of this device</button>
+                        </div>
+                    </section>
+                </div>
+                <section class="panel">
+                    <div class="panel-head">
+                        <div><h3>Active protections</h3><p>Implemented in this build.</p></div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="check-list">
+                            <li>BCrypt password hashing with a per-password salt</li>
+                            <li>HTTP-only session cookie with SameSite=Lax</li>
+                            <li>CSRF token required for state-changing requests</li>
+                            <li>Role checks enforced on the server for every protected endpoint</li>
+                            <li>Account status re-checked on every authenticated request</li>
+                            <li>Rate limiting on sign-in and registration attempts</li>
+                            <li>Consistent JSON errors without internal exception details</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+</div>
+
+<dialog class="app-dialog" data-status-dialog>
+    <form method="dialog" class="dialog-form" data-status-form novalidate>
+        <div class="dialog-head">
+            <h3>Update payment status</h3>
+            <p data-status-dialog-note>This records a status change. It does not transfer money.</p>
+        </div>
+        <div class="field">
+            <label for="statusDialogValue">Status</label>
+            <div class="field-control">
+                <select class="select" id="statusDialogValue" name="status" required>
+                    <option value="DUE">Due</option>
+                    <option value="PROCESSING">Processing</option>
+                    <option value="PAID">Paid</option>
+                    <option value="FAILED">Failed</option>
+                    <option value="REFUNDED">Refunded</option>
+                    <option value="DISPUTED">Disputed</option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label for="statusDialogAmount">Amount paid <span class="field-hint">(optional)</span></label>
+            <div class="field-control"><input class="input" id="statusDialogAmount" name="paidAmount" type="number" min="0" step="0.01"></div>
+        </div>
+        <div class="field">
+            <label for="statusDialogReference">External reference <span class="field-hint">(optional)</span></label>
+            <div class="field-control"><input class="input" id="statusDialogReference" name="externalReference" type="text" maxlength="160" placeholder="Invoice or transfer reference recorded manually"></div>
+        </div>
+        <div class="field">
+            <label for="statusDialogNotes">Notes <span class="field-hint">(optional)</span></label>
+            <div class="field-control"><textarea class="input textarea" id="statusDialogNotes" name="notes" rows="2" maxlength="2000"></textarea></div>
+        </div>
+        <div class="form-alert" data-status-dialog-alert role="status" hidden><span data-status-dialog-alert-text></span></div>
+        <div class="form-actions">
+            <button class="button button-navy" type="submit" data-status-dialog-save>Save status</button>
+            <button class="button button-ghost" type="button" data-status-dialog-cancel>Cancel</button>
+        </div>
+    </form>
+</dialog>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="/js/ui.js" defer></script>
+<script src="/js/auth.js" defer></script>
+<script src="/js/vendor/chart.umd.min.js" defer></script>
+<script src="/js/dashboard.js" defer></script>
+</body>
+</html>
